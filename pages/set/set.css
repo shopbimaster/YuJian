@@ -1,0 +1,175 @@
+.ml-5 {
+  margin-left: 5px;
+}
+.ml-47 {
+  margin-left: 47px;
+}
+.page {
+  padding-top: 16px;
+  background-color: #2499ff;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+.group {
+  padding-left: 34px;
+  padding-right: 14px;
+}
+.font {
+  font-size: 14px;
+  font-family: Roboto;
+  line-height: 13px;
+  color: #2e2e2e;
+}
+.text {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 11px;
+}
+.image {
+  width: 17px;
+  height: 11px;
+}
+.image_2 {
+  width: 15px;
+  height: 11px;
+}
+.image_3 {
+  width: 26px;
+  height: 13px;
+}
+.text_2 {
+  margin-left: 26px;
+  margin-top: 32px;
+  color: #ffffff;
+  font-size: 26px;
+  font-family: Roboto;
+  line-height: 24px;
+}
+.section {
+  margin-top: 44px;
+  padding: 34px 0 4px;
+  background-image: url('https://ide.code.fun/api/image?token=6995edf44bd4760011a96577&name=303dbd4ced67da6293f337d5466482f5.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.text_3 {
+  margin-left: 24px;
+  line-height: 13px;
+}
+.list {
+  margin-top: 40px;
+  padding-left: 24px;
+  padding-right: 16px;
+}
+.text_4 {
+  margin-top: 4px;
+}
+.image_4 {
+  width: 28px;
+  height: 28px;
+}
+.group_2 {
+  margin-top: 26px;
+}
+.text_5 {
+  margin-top: 4px;
+}
+.group_3 {
+  margin-top: 27px;
+}
+.text_6 {
+  margin-top: 4px;
+  line-height: 13px;
+}
+.group_4 {
+  margin-top: 16px;
+}
+.text_7 {
+  margin-bottom: 4px;
+  line-height: 13px;
+}
+.image_5 {
+  margin-right: 5px;
+  width: 51px;
+  height: 31px;
+}
+.group_5 {
+  margin-top: 321px;
+}
+.section_2 {
+  padding-top: 8px;
+  background-color: #ffffff;
+  height: 52px;
+}
+.group_6 {
+  width: 321.5px;
+}
+.text-wrapper {
+  margin-right: 80px;
+  padding: 30px 0 2px;
+  overflow: hidden;
+  width: 25px;
+}
+.font_2 {
+  font-size: 12px;
+  font-family: HarmonyOSSansTC;
+  line-height: 11px;
+  color: #a3a1bf;
+}
+.text_8 {
+  line-height: 11px;
+}
+.equal-division {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.equal-division-item {
+  width: 27px;
+  height: 27px;
+}
+.text_10 {
+  line-height: 11px;
+}
+.pos_2 {
+  position: absolute;
+  left: 27.5px;
+  bottom: 0;
+  transform: rotate(0deg);
+}
+.text_11 {
+  color: #a3a1bf;
+  font-size: 12px;
+  font-family: MiSans;
+  line-height: 11px;
+}
+.pos_3 {
+  position: absolute;
+  left: 105.5px;
+  bottom: 0;
+}
+.text_12 {
+  line-height: 11px;
+}
+.pos_4 {
+  position: absolute;
+  left: 50%;
+  bottom: 1px;
+  transform: translateX(-50%);
+}
+.text_9 {
+  color: #3999ed;
+  line-height: 11px;
+}
+.pos {
+  position: absolute;
+  right: 24px;
+  bottom: 3px;
+}
+.image_6 {
+  width: 100vw;
+  height: 9.0667vw;
+}

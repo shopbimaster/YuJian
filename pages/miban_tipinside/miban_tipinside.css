@@ -1,0 +1,251 @@
+.mt-3 {
+  margin-top: 3px;
+}
+.page {
+  background-color: #f6f6f9;
+  border-radius: 40px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+.group {
+  padding-bottom: 224px;
+}
+.group_2 {
+  padding-bottom: 177px;
+  width: 198px;
+}
+.section {
+  background-image: url('https://ide.code.fun/api/image?token=6995edf44bd4760011a96577&name=6b6ed9358fe698c0dda04d567972d51d.png');
+  background-size: 100% 100%;
+  width: 143px;
+  height: 139px;
+}
+.section_6 {
+  border-radius: 20px;
+  background-image: url('https://ide.code.fun/api/image?token=6995edf44bd4760011a96577&name=9953070ab507ede2e4d79dcc1b556ff0.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 187px;
+  height: 223px;
+}
+.pos_4 {
+  position: absolute;
+  left: 11px;
+  right: 0;
+  top: 93px;
+}
+.group_3 {
+  padding-bottom: 343px;
+}
+.pos {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.section_3 {
+  background-image: url('https://ide.code.fun/api/image?token=6995edf44bd4760011a96577&name=2b97232741f1d3d90840fe18ce5afbbf.png');
+  background-size: 100% 100%;
+  width: 123px;
+  height: 197px;
+}
+.group_4 {
+  overflow: hidden;
+  width: 323px;
+}
+.pos_3 {
+  position: absolute;
+  right: 21px;
+  top: 43px;
+}
+.text-wrapper {
+  padding: 6px 0;
+  overflow: hidden;
+  width: 112px;
+  height: 38px;
+}
+.text {
+  color: #17135f;
+  font-size: 28px;
+  font-family: MiSans;
+  font-weight: 600;
+  line-height: 26px;
+}
+.text-wrapper_2 {
+  padding: 10px 0;
+  background-image: linear-gradient(90deg, #78c8f0 0%, #3999ed 100%);
+  border-radius: 95px;
+  width: 56px;
+  height: 32px;
+}
+.text_2 {
+  color: #ffffff;
+  font-size: 14px;
+  font-family: MiSans;
+  line-height: 13px;
+}
+.image {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.section_2 {
+  padding: 16px 16px 16px 32px;
+  background-color: #00000000;
+}
+.pos_2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.section_4 {
+  background-color: #00000000;
+  width: 28px;
+  height: 11px;
+}
+.section_5 {
+  background-color: #00000000;
+  width: 67px;
+  height: 11px;
+}
+.section_7 {
+  border-radius: 20px;
+  background-image: url('https://ide.code.fun/api/image?token=6995edf44bd4760011a96577&name=358c4daabdd9d68f1961d096cfe43041.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 177px;
+  height: 222px;
+}
+.pos_5 {
+  position: absolute;
+  right: 3px;
+  top: 94px;
+}
+.group_5 {
+  position: absolute;
+  right: 29.5px;
+  top: 286px;
+}
+.equal-division-item {
+  padding: 0 6px;
+  overflow: hidden;
+  width: 107.5px;
+  height: 16px;
+}
+.image_2 {
+  width: 13px;
+  height: 16px;
+}
+.font {
+  font-size: 12px;
+  font-family: MiSans;
+  line-height: 16px;
+  color: #ffffff;
+}
+.text_3 {
+  margin-right: 4px;
+  width: 71px;
+}
+.section_8 {
+  background-color: #d4e5f999;
+  border-radius: 0 50% 50% 0;
+  width: 159px;
+  height: 278px;
+}
+.pos_6 {
+  position: absolute;
+  left: 0;
+  top: 243px;
+}
+.group_6 {
+  position: absolute;
+  right: 29.5px;
+  top: 510px;
+}
+.equal-division {
+  width: 300px;
+}
+.pos_7 {
+  position: absolute;
+  left: 11px;
+  top: 317px;
+}
+.pos_8 {
+  position: absolute;
+  right: 3px;
+  top: 318px;
+}
+.group_7 {
+  height: 237px;
+}
+.group_8 {
+  padding-left: 12px;
+}
+.image_3 {
+  border-radius: 20px;
+  width: 187px;
+  height: 223px;
+}
+.image_4 {
+  border-radius: 20px;
+  width: 179px;
+  height: 222px;
+}
+.section_9 {
+  margin-top: -38px;
+  padding: 8px 22px 0 28px;
+  background-color: #ffffff;
+}
+.group_9 {
+  width: 30px;
+}
+.image_5 {
+  width: 26px;
+  height: 28px;
+}
+.font_2 {
+  font-size: 12px;
+  font-family: HarmonyOSSansTC;
+  line-height: 11px;
+  color: #a3a1bf;
+}
+.text_5 {
+  line-height: 11px;
+  transform: rotate(0deg);
+}
+.image_6 {
+  width: 28px;
+  height: 28px;
+}
+.text_6 {
+  color: #a3a1bf;
+  line-height: 11px;
+}
+.text_7 {
+  line-height: 11px;
+}
+.group_10 {
+  overflow: hidden;
+  width: 25px;
+  height: 43.5px;
+}
+.image_7 {
+  width: 25px;
+  height: 26px;
+}
+.text_4 {
+  color: #3999ed;
+  line-height: 11px;
+}
+.image_8 {
+  width: 29px;
+  height: 26px;
+}
+.section_10 {
+  background-color: #ffffff;
+  height: 8.5px;
+}

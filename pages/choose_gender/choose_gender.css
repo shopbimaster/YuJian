@@ -1,0 +1,141 @@
+.mt-13 {
+  margin-top: 13px;
+}
+.page {
+  padding-bottom: 49px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+.section {
+  padding-bottom: 129px;
+  border-radius: 8px;
+  background-image: url('https://ide.code.fun/api/image?token=6995edf44bd4760011a96577&name=8f5db63f2270f6e858d50560bdb046ed.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 377px;
+}
+.group {
+  padding-top: 38px;
+}
+.image-wrapper {
+  padding: 16px 0;
+  background-color: #00000000;
+}
+.image {
+  margin-right: 17px;
+  width: 24px;
+  height: 11px;
+}
+.image_2 {
+  margin: 21px 16px 0 13px;
+  width: 92.3077vw;
+  height: 92.3077vw;
+}
+.section_2 {
+  padding: 259px 0 17px;
+  border-radius: 8px;
+  background-image: url('https://ide.code.fun/api/image?token=6995edf44bd4760011a96577&name=d81192d046830872d4592058e6629f6b.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 348px;
+}
+.pos {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.section_3 {
+  margin-left: -13px;
+  background-color: #a03a35cc;
+  width: 375px;
+  height: 72px;
+}
+.font {
+  font-size: 16px;
+  font-family: HarmonyOSSansSC;
+  line-height: 30px;
+  color: #ffffffcc;
+}
+.pos_2 {
+  position: absolute;
+  left: 13.5px;
+  bottom: 15.5px;
+}
+.text {
+  text-align: justify;
+  text-indent: 0px;
+  width: 0.5px;
+}
+.pos_3 {
+  position: absolute;
+  left: 13.5px;
+  top: 302.5px;
+}
+.group_2 {
+  padding: 0 26px;
+}
+.view {
+  margin-top: 60px;
+}
+.text_2 {
+  color: #000000bf;
+  font-size: 28px;
+  font-family: HarmonyOSSansSC;
+  font-weight: 700;
+  line-height: 26.5px;
+}
+.text_3 {
+  color: #000000bf;
+  line-height: 12px;
+}
+.text_4 {
+  color: #00000080;
+  font-size: 14px;
+  font-family: HarmonyOSSansSC;
+  line-height: 13px;
+}
+.view_2 {
+  margin-top: 38px;
+}
+.text-wrapper {
+  padding: 14px 0;
+  border-radius: 8px;
+  width: 153px;
+  height: 44px;
+  border-left: solid 1px #1f9ef2;
+  border-right: solid 1px #1f9ef2;
+  border-top: solid 1px #1f9ef2;
+  border-bottom: solid 1px #1f9ef2;
+}
+.font_2 {
+  font-size: 16px;
+  font-family: HarmonyOSSansSC;
+  line-height: 15px;
+  color: #000000cc;
+}
+.text-wrapper_2 {
+  padding: 14px 0;
+  border-radius: 8px;
+  width: 153px;
+  height: 44px;
+  border-left: solid 1px #1ca0ff;
+  border-right: solid 1px #1ca0ff;
+  border-top: solid 1px #1ca0ff;
+  border-bottom: solid 1px #1ca0ff;
+}
+.text_5 {
+  line-height: 15px;
+}
+.pos_4 {
+  position: absolute;
+  right: 136.5px;
+  top: 313.5px;
+}
+.section_4 {
+  background-color: #00000080;
+  border-radius: 60px;
+  width: 130px;
+  height: 5px;
+}

@@ -1,0 +1,35 @@
+.page {
+  padding-bottom: 195px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+.image {
+  margin-right: 44px;
+  width: 375px;
+  height: 812px;
+}
+.group {
+  padding-top: 74px;
+  overflow: hidden;
+  width: 375px;
+  height: 125px;
+}
+.pos {
+  position: absolute;
+  left: 0;
+  top: 547px;
+}
+.divider {
+  margin-left: 130px;
+  background-color: #d4cbcb;
+  width: 346.5px;
+  height: 2px;
+}
+.image_2 {
+  margin-left: 146px;
+  margin-bottom: -8px;
+  width: 12.5px;
+  height: 12.5px;
+}

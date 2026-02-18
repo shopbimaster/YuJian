@@ -1,0 +1,525 @@
+/************************************************************
+** 请将全局样式拷贝到项目的全局 CSS 文件或者当前页面的顶部 **
+** 否则页面将无法正常显示                                  **
+************************************************************/
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', 'Microsoft Yahei', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+}
+
+body * {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.yujian-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.yujian-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.yujian-justify-start {
+  justify-content: flex-start;
+}
+
+.yujian-justify-end {
+  justify-content: flex-end;
+}
+
+.yujian-justify-center {
+  justify-content: center;
+}
+
+.yujian-justify-between {
+  justify-content: space-between;
+}
+
+.yujian-justify-around {
+  justify-content: space-around;
+}
+
+.yujian-justify-evenly {
+  justify-content: space-evenly;
+}
+
+.yujian-items-start {
+  align-items: flex-start;
+}
+
+.yujian-items-end {
+  align-items: flex-end;
+}
+
+.yujian-items-center {
+  align-items: center;
+}
+
+.yujian-items-baseline {
+  align-items: baseline;
+}
+
+.yujian-items-stretch {
+  align-items: stretch;
+}
+
+.yujian-self-start {
+  align-self: flex-start;
+}
+
+.yujian-self-end {
+  align-self: flex-end;
+}
+
+.yujian-self-center {
+  align-self: center;
+}
+
+.yujian-self-baseline {
+  align-self: baseline;
+}
+
+.yujian-self-stretch {
+  align-self: stretch;
+}
+
+.yujian-flex-1 {
+  flex: 1 1 0%;
+}
+
+.yujian-flex-auto {
+  flex: 1 1 auto;
+}
+
+.yujian-grow {
+  flex-grow: 1;
+}
+
+.yujian-grow-0 {
+  flex-grow: 0;
+}
+
+.yujian-shrink {
+  flex-shrink: 1;
+}
+
+.yujian-shrink-0 {
+  flex-shrink: 0;
+}
+
+.yujian-relative {
+  position: relative;
+}
+
+.yujian-ml-2 {
+  margin-left: 2px;
+}
+
+.yujian-mt-2 {
+  margin-top: 2px;
+}
+
+.yujian-ml-4 {
+  margin-left: 4px;
+}
+
+.yujian-mt-4 {
+  margin-top: 4px;
+}
+
+.yujian-ml-6 {
+  margin-left: 6px;
+}
+
+.yujian-mt-6 {
+  margin-top: 6px;
+}
+
+.yujian-ml-8 {
+  margin-left: 8px;
+}
+
+.yujian-mt-8 {
+  margin-top: 8px;
+}
+
+.yujian-ml-10 {
+  margin-left: 10px;
+}
+
+.yujian-mt-10 {
+  margin-top: 10px;
+}
+
+.yujian-ml-12 {
+  margin-left: 12px;
+}
+
+.yujian-mt-12 {
+  margin-top: 12px;
+}
+
+.yujian-ml-14 {
+  margin-left: 14px;
+}
+
+.yujian-mt-14 {
+  margin-top: 14px;
+}
+
+.yujian-ml-16 {
+  margin-left: 16px;
+}
+
+.yujian-mt-16 {
+  margin-top: 16px;
+}
+
+.yujian-ml-18 {
+  margin-left: 18px;
+}
+
+.yujian-mt-18 {
+  margin-top: 18px;
+}
+
+.yujian-ml-20 {
+  margin-left: 20px;
+}
+
+.yujian-mt-20 {
+  margin-top: 20px;
+}
+
+.yujian-ml-22 {
+  margin-left: 22px;
+}
+
+.yujian-mt-22 {
+  margin-top: 22px;
+}
+
+.yujian-ml-24 {
+  margin-left: 24px;
+}
+
+.yujian-mt-24 {
+  margin-top: 24px;
+}
+
+.yujian-ml-26 {
+  margin-left: 26px;
+}
+
+.yujian-mt-26 {
+  margin-top: 26px;
+}
+
+.yujian-ml-28 {
+  margin-left: 28px;
+}
+
+.yujian-mt-28 {
+  margin-top: 28px;
+}
+
+.yujian-ml-30 {
+  margin-left: 30px;
+}
+
+.yujian-mt-30 {
+  margin-top: 30px;
+}
+
+.yujian-ml-32 {
+  margin-left: 32px;
+}
+
+.yujian-mt-32 {
+  margin-top: 32px;
+}
+
+.yujian-ml-34 {
+  margin-left: 34px;
+}
+
+.yujian-mt-34 {
+  margin-top: 34px;
+}
+
+.yujian-ml-36 {
+  margin-left: 36px;
+}
+
+.yujian-mt-36 {
+  margin-top: 36px;
+}
+
+.yujian-ml-38 {
+  margin-left: 38px;
+}
+
+.yujian-mt-38 {
+  margin-top: 38px;
+}
+
+.yujian-ml-40 {
+  margin-left: 40px;
+}
+
+.yujian-mt-40 {
+  margin-top: 40px;
+}
+
+.yujian-ml-42 {
+  margin-left: 42px;
+}
+
+.yujian-mt-42 {
+  margin-top: 42px;
+}
+
+.yujian-ml-44 {
+  margin-left: 44px;
+}
+
+.yujian-mt-44 {
+  margin-top: 44px;
+}
+
+.yujian-ml-46 {
+  margin-left: 46px;
+}
+
+.yujian-mt-46 {
+  margin-top: 46px;
+}
+
+.yujian-ml-48 {
+  margin-left: 48px;
+}
+
+.yujian-mt-48 {
+  margin-top: 48px;
+}
+
+.yujian-ml-50 {
+  margin-left: 50px;
+}
+
+.yujian-mt-50 {
+  margin-top: 50px;
+}
+
+.yujian-ml-52 {
+  margin-left: 52px;
+}
+
+.yujian-mt-52 {
+  margin-top: 52px;
+}
+
+.yujian-ml-54 {
+  margin-left: 54px;
+}
+
+.yujian-mt-54 {
+  margin-top: 54px;
+}
+
+.yujian-ml-56 {
+  margin-left: 56px;
+}
+
+.yujian-mt-56 {
+  margin-top: 56px;
+}
+
+.yujian-ml-58 {
+  margin-left: 58px;
+}
+
+.yujian-mt-58 {
+  margin-top: 58px;
+}
+
+.yujian-ml-60 {
+  margin-left: 60px;
+}
+
+.yujian-mt-60 {
+  margin-top: 60px;
+}
+
+.yujian-ml-62 {
+  margin-left: 62px;
+}
+
+.yujian-mt-62 {
+  margin-top: 62px;
+}
+
+.yujian-ml-64 {
+  margin-left: 64px;
+}
+
+.yujian-mt-64 {
+  margin-top: 64px;
+}
+
+.yujian-ml-66 {
+  margin-left: 66px;
+}
+
+.yujian-mt-66 {
+  margin-top: 66px;
+}
+
+.yujian-ml-68 {
+  margin-left: 68px;
+}
+
+.yujian-mt-68 {
+  margin-top: 68px;
+}
+
+.yujian-ml-70 {
+  margin-left: 70px;
+}
+
+.yujian-mt-70 {
+  margin-top: 70px;
+}
+
+.yujian-ml-72 {
+  margin-left: 72px;
+}
+
+.yujian-mt-72 {
+  margin-top: 72px;
+}
+
+.yujian-ml-74 {
+  margin-left: 74px;
+}
+
+.yujian-mt-74 {
+  margin-top: 74px;
+}
+
+.yujian-ml-76 {
+  margin-left: 76px;
+}
+
+.yujian-mt-76 {
+  margin-top: 76px;
+}
+
+.yujian-ml-78 {
+  margin-left: 78px;
+}
+
+.yujian-mt-78 {
+  margin-top: 78px;
+}
+
+.yujian-ml-80 {
+  margin-left: 80px;
+}
+
+.yujian-mt-80 {
+  margin-top: 80px;
+}
+
+.yujian-ml-82 {
+  margin-left: 82px;
+}
+
+.yujian-mt-82 {
+  margin-top: 82px;
+}
+
+.yujian-ml-84 {
+  margin-left: 84px;
+}
+
+.yujian-mt-84 {
+  margin-top: 84px;
+}
+
+.yujian-ml-86 {
+  margin-left: 86px;
+}
+
+.yujian-mt-86 {
+  margin-top: 86px;
+}
+
+.yujian-ml-88 {
+  margin-left: 88px;
+}
+
+.yujian-mt-88 {
+  margin-top: 88px;
+}
+
+.yujian-ml-90 {
+  margin-left: 90px;
+}
+
+.yujian-mt-90 {
+  margin-top: 90px;
+}
+
+.yujian-ml-92 {
+  margin-left: 92px;
+}
+
+.yujian-mt-92 {
+  margin-top: 92px;
+}
+
+.yujian-ml-94 {
+  margin-left: 94px;
+}
+
+.yujian-mt-94 {
+  margin-top: 94px;
+}
+
+.yujian-ml-96 {
+  margin-left: 96px;
+}
+
+.yujian-mt-96 {
+  margin-top: 96px;
+}
+
+.yujian-ml-98 {
+  margin-left: 98px;
+}
+
+.yujian-mt-98 {
+  margin-top: 98px;
+}
+
+.yujian-ml-100 {
+  margin-left: 100px;
+}
+
+.yujian-mt-100 {
+  margin-top: 100px;
+}

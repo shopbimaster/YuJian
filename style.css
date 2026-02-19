@@ -1,0 +1,121 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    /* 使用设备系统默认字体 */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 主界面容器 */
+.app-container {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    /* 10%圆角 */
+    border-radius: 37.5px;
+    /* 背景纯色 */
+    background-color: #F6F6F9;
+    overflow: hidden;
+}
+
+/* 背景圆形容器 */
+.background-circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* 圆形基础样式 */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* 第一个圆形 */
+.circle-1 {
+    left: -28px;
+    top: -22px;
+    width: 156px;
+    height: 156px;
+    background-color: #CEDAF5;
+}
+
+/* 第二个圆形 */
+.circle-2 {
+    left: -119px;
+    top: 282px;
+    width: 278px;
+    height: 278px;
+    background-color: #D6E6F9;
+    /* 饱和度60% */
+    opacity: 0.6;
+}
+
+/* 第三个圆形 */
+.circle-3 {
+    left: 371px;
+    top: -40px;
+    width: 236px;
+    height: 236px;
+    transform: translateX(-50%);
+    background-color: #D4F4F8;
+}
+
+/* 底部功能条 */
+.tab-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 83px;
+    background-color: #ffffff;
+    display: flex;
+    /* 等距排布 */
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+/* 功能选项 */
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* 默认颜色 */
+    color: #A3A1BF;
+    transition: color 0.2s ease;
+}
+
+/* 选中状态 */
+.tab-item.active {
+    /* 选中颜色 */
+    color: #2499FF;
+}
+
+/* 图标样式 */
+.tab-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+}
+
+/* 文字标签 */
+.tab-label {
+    font-size: 12px;
+    font-weight: 500;
+}

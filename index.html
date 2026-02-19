@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遇见小程序</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主界面容器 -->
+    <div class="app-container">
+        <!-- 背景圆形容器 -->
+        <div class="background-circles">
+            <!-- 第一个圆形 -->
+            <div class="circle circle-1"></div>
+            <!-- 第二个圆形 -->
+            <div class="circle circle-2"></div>
+            <!-- 第三个圆形 -->
+            <div class="circle circle-3"></div>
+        </div>
+        <!-- 底部功能条 -->
+        <div class="tab-bar">
+            <!-- 推荐选项 -->
+            <div class="tab-item active" data-tab="recommend">
+                <!-- 推荐图标 -->
+                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <!-- 推荐文字 -->
+                <span class="tab-label">推荐</span>
+            </div>
+            <!-- 社区选项 -->
+            <div class="tab-item" data-tab="community">
+                <!-- 社区图标 -->
+                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <!-- 社区文字 -->
+                <span class="tab-label">社区</span>
+            </div>
+            <!-- 消息选项 -->
+            <div class="tab-item" data-tab="message">
+                <!-- 消息图标 -->
+                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <!-- 消息文字 -->
+                <span class="tab-label">消息</span>
+            </div>
+            <!-- 觅伴选项 -->
+            <div class="tab-item" data-tab="find">
+                <!-- 觅伴图标 -->
+                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <!-- 觅伴文字 -->
+                <span class="tab-label">觅伴</span>
+            </div>
+            <!-- 我的选项 -->
+            <div class="tab-item" data-tab="profile">
+                <!-- 我的图标 -->
+                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <!-- 我的文字 -->
+                <span class="tab-label">我的</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 获取所有功能选项
+        const tabItems = document.querySelectorAll('.tab-item');
+        // 遍历每个选项添加点击事件
+        tabItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // 移除所有选项的选中状态
+                tabItems.forEach(tab => tab.classList.remove('active'));
+                // 添加当前选项的选中状态
+                item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

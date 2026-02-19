@@ -7,19 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 主应用容器 -->
     <div class="app-container">
+        <!-- 背景圆形容器 -->
         <div class="background-circles">
             <div class="circle circle-1"></div>
             <div class="circle circle-2"></div>
             <div class="circle circle-3"></div>
         </div>
         
+        <!-- 页面内容容器 -->
         <div class="page-container">
+            <!-- 推荐页面 -->
             <div class="page page-recommend active" data-page="recommend"></div>
+            <!-- 社区页面 -->
             <div class="page page-community" data-page="community"></div>
             
+            <!-- 聊天列表页面 -->
             <div class="page page-message" data-page="message">
                 <div class="chat-title">聊天</div>
+                <!-- 搜索框容器 -->
                 <div class="search-container">
                     <input type="text" class="search-input" placeholder="搜索好友">
                     <button class="search-button">
@@ -29,24 +36,32 @@
                         </svg>
                     </button>
                 </div>
+                <!-- 聊天列表 -->
                 <div class="chat-list"></div>
             </div>
             
+            <!-- 聊天详情页面 -->
             <div class="page page-chat-detail" data-page="chat-detail">
+                <!-- 聊天详情顶部信息栏 -->
                 <div class="chat-detail-info">
+                    <!-- 返回按钮 -->
                     <button class="back-button">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="15 18 9 12 15 6"></polyline>
                         </svg>
                     </button>
+                    <!-- 头像容器 -->
                     <div class="chat-avatar-container">
                         <img class="chat-avatar" src="" alt="">
+                        <!-- 在线状态圆点 -->
                         <div class="online-dot"></div>
                     </div>
+                    <!-- 聊天对象信息 -->
                     <div class="chat-info">
                         <div class="chat-name"></div>
                         <div class="chat-tag"></div>
                     </div>
+                    <!-- 更多按钮 -->
                     <button class="more-button">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="5" cy="12" r="1"></circle>
@@ -55,25 +70,33 @@
                         </svg>
                     </button>
                 </div>
+                <!-- 消息列表容器 -->
                 <div class="chat-detail-messages"></div>
+                <!-- 底部输入框容器 -->
                 <div class="chat-detail-input-container">
                     <input type="text" class="chat-detail-input" placeholder="输入消息...">
                     <button class="send-button">发送</button>
                 </div>
             </div>
             
+            <!-- 觅伴页面 -->
             <div class="page page-find" data-page="find"></div>
+            <!-- 我的页面 -->
             <div class="page page-profile" data-page="profile"></div>
         </div>
         
+        <!-- 更多菜单遮罩层 -->
         <div class="more-menu-overlay"></div>
+        <!-- 更多菜单 -->
         <div class="more-menu">
+            <!-- 语音通话菜单项 -->
             <div class="more-menu-item">
                 <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
                 <span class="menu-label">语音通话</span>
             </div>
+            <!-- 视频通话菜单项 -->
             <div class="more-menu-item">
                 <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="23 7 16 12 23 17 23 7"></polygon>
@@ -81,18 +104,22 @@
                 </svg>
                 <span class="menu-label">视频通话</span>
             </div>
+            <!-- 取消按钮 -->
             <div class="more-menu-cancel">
                 <span>取消</span>
             </div>
         </div>
         
+        <!-- 底部标签栏 -->
         <div class="tab-bar">
+            <!-- 推荐标签 -->
             <div class="tab-item active" data-tab="recommend">
                 <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                 </svg>
                 <span class="tab-label">推荐</span>
             </div>
+            <!-- 社区标签 -->
             <div class="tab-item" data-tab="community">
                 <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -102,18 +129,21 @@
                 </svg>
                 <span class="tab-label">社区</span>
             </div>
+            <!-- 消息标签 -->
             <div class="tab-item" data-tab="message">
                 <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 </svg>
                 <span class="tab-label">消息</span>
             </div>
+            <!-- 觅伴标签 -->
             <div class="tab-item" data-tab="find">
                 <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                 </svg>
                 <span class="tab-label">觅伴</span>
             </div>
+            <!-- 我的标签 -->
             <div class="tab-item" data-tab="profile">
                 <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -125,62 +155,81 @@
     </div>
     
     <script>
+        // 模拟好友数据数组
         const mockFriends = [
+            // 好友1：小明
             { id: 1, nickname: '小明', avatar: 'person/boy1.jpg', tag: '运动达人', is_read: false, unread_count: 1, is_online: true, chat_history: [
                 { is_me: false, time: '2026-02-19 14:30', content: '你好！' },
                 { is_me: true, time: '2026-02-19 14:31', content: '你好呀！' },
                 { is_me: false, time: '2026-02-19 14:32', content: '今天天气不错' }
             ]},
+            // 好友2：小红
             { id: 2, nickname: '小红', avatar: 'person/girl1.jpg', tag: '学习搭子', is_read: true, unread_count: 0, is_online: false, chat_history: [
                 { is_me: true, time: '2026-02-18 19:20', content: '明天有空吗？' },
                 { is_me: false, time: '2026-02-18 19:25', content: '有的，什么事？' }
             ]},
+            // 好友3：小李
             { id: 3, nickname: '小李', avatar: 'person/boy2.jpg', tag: '摄影爱好者', is_read: false, unread_count: 1, is_online: true, chat_history: [
                 { is_me: false, time: '2026-02-19 10:15', content: '周末一起去爬山吧' }
             ]},
+            // 好友4：小王
             { id: 4, nickname: '小王', avatar: 'person/boy3.jpg', tag: '美食博主', is_read: true, unread_count: 0, is_online: true, chat_history: [
                 { is_me: true, time: '2026-02-17 16:45', content: '收到了，谢谢！' },
                 { is_me: false, time: '2026-02-17 16:46', content: '不客气～' }
             ]},
+            // 好友5：小张
             { id: 5, nickname: '小张', avatar: 'person/girl2.jpg', tag: '旅行达人', is_read: false, unread_count: 2, is_online: false, chat_history: [
                 { is_me: false, time: '2026-02-19 09:00', content: '早上好！' },
                 { is_me: false, time: '2026-02-19 09:05', content: '今天记得开会' }
             ]},
+            // 好友6：小赵
             { id: 6, nickname: '小赵', avatar: 'person/girl3.jpg', tag: '音乐爱好者', is_read: true, unread_count: 0, is_online: true, chat_history: [
                 { is_me: true, time: '2026-02-16 21:30', content: '晚安' },
                 { is_me: false, time: '2026-02-16 21:32', content: '晚安，好梦！' }
             ]}
         ];
         
+        // 当前页面状态
         let currentPage = 'recommend';
+        // 上一个页面状态
         let previousPage = 'recommend';
+        // 标签项元素集合
         const tabItems = document.querySelectorAll('.tab-item');
+        // 页面元素集合
         const pages = document.querySelectorAll('.page');
+        // 标签栏元素
         const tabBar = document.querySelector('.tab-bar');
         
+        // 按最后消息时间排序好友
         function sortFriendsByTime(friends) {
             return [...friends].sort((a, b) => {
+                // 获取好友的最后消息时间
                 const getLastTime = (f) => {
                     if (f.chat_history && f.chat_history.length > 0) {
                         return new Date(f.chat_history[f.chat_history.length - 1].time);
                     }
                     return new Date(0);
                 };
+                // 降序排列
                 return getLastTime(b) - getLastTime(a);
             });
         }
         
+        // 渲染聊天列表
         function renderChatList(friends) {
             const chatList = document.querySelector('.chat-list');
             chatList.innerHTML = '';
             
+            // 先按时间排序
             const sortedFriends = sortFriendsByTime(friends);
             
+            // 遍历每个好友创建列表项
             sortedFriends.forEach(friend => {
                 const lastMessage = friend.chat_history[friend.chat_history.length - 1];
                 const chatItem = document.createElement('div');
                 chatItem.className = 'chat-item';
                 
+                // 构建聊天项HTML
                 chatItem.innerHTML = `
                     <div class="chat-avatar-container">
                         <img class="chat-avatar" src="${friend.avatar}" alt="${friend.nickname}">
@@ -193,18 +242,23 @@
                     ${friend.unread_count > 0 ? `<div class="unread-badge">${friend.unread_count}</div>` : ''}
                 `;
                 
+                // 添加点击事件，打开聊天详情
                 chatItem.addEventListener('click', () => openChatDetail(friend));
                 chatList.appendChild(chatItem);
             });
         }
         
+        // 打开聊天详情页
         function openChatDetail(friend) {
+            // 先关闭更多菜单
             hideMoreMenu();
             
+            // 设置头像
             const avatarImg = document.querySelector('.chat-detail-info .chat-avatar');
             avatarImg.src = friend.avatar;
             avatarImg.alt = friend.nickname;
             
+            // 设置在线状态
             const onlineDot = document.querySelector('.chat-detail-info .online-dot');
             if (friend.is_online) {
                 onlineDot.style.display = 'block';
@@ -212,12 +266,15 @@
                 onlineDot.style.display = 'none';
             }
             
+            // 设置昵称和标签
             document.querySelector('.chat-detail-info .chat-name').textContent = friend.nickname;
             document.querySelector('.chat-detail-info .chat-tag').textContent = friend.tag;
             
+            // 渲染消息列表
             const messagesContainer = document.querySelector('.chat-detail-messages');
             messagesContainer.innerHTML = '';
             
+            // 遍历聊天历史
             friend.chat_history.forEach(msg => {
                 const messageItem = document.createElement('div');
                 messageItem.className = `message-item ${msg.is_me ? 'message-me' : 'message-other'}`;
@@ -229,8 +286,10 @@
                     avatarImg = `<img class="message-avatar" src="person/girl4.jpg" alt="我">`;
                 }
                 
+                // 提取时间部分
                 const timeStr = msg.time.split(' ')[1];
                 
+                // 根据是否是我的消息构建不同的HTML结构
                 if (msg.is_me) {
                     messageItem.innerHTML = `
                         <div class="message-content">
@@ -251,8 +310,10 @@
                 messagesContainer.appendChild(messageItem);
             });
             
+            // 滚动到底部
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
             
+            // 切换页面状态
             pages.forEach(page => {
                 page.classList.remove('active', 'from-right', 'from-left', 'to-right', 'to-left');
             });
@@ -264,10 +325,12 @@
             currentPage = 'chat-detail';
         }
         
+        // 初始化聊天页面
         function initChatPage() {
             renderChatList(mockFriends);
         }
         
+        // 切换页面
         function switchPage(targetPage) {
             if (currentPage === targetPage) return;
             
@@ -278,6 +341,7 @@
             const rightTabs = ['recommend', 'community'];
             const leftTabs = ['find', 'profile'];
             
+            // 判断滑动方向
             if (targetPage === 'message') {
                 if (rightTabs.includes(previousPage)) {
                     slideDirection = 'from-right';
@@ -292,6 +356,7 @@
                 }
             }
             
+            // 更新页面类名
             pages.forEach(page => {
                 page.classList.remove('active', 'from-right', 'from-left', 'to-right', 'to-left');
             });
@@ -304,10 +369,12 @@
                 targetPageElement.classList.add('active');
             }
             
+            // 如果切换到消息页，初始化聊天列表
             if (targetPage === 'message') {
                 initChatPage();
             }
             
+            // 根据页面是否是聊天详情页显示/隐藏标签栏
             if (targetPage === 'chat-detail') {
                 tabBar.style.display = 'none';
             } else {
@@ -315,9 +382,11 @@
             }
         }
         
+        // 获取搜索相关元素
         const searchButton = document.querySelector('.search-button');
         const searchInput = document.querySelector('.search-input');
         
+        // 搜索按钮点击事件
         searchButton.addEventListener('click', () => {
             const keyword = searchInput.value.trim();
             if (keyword) {
@@ -327,6 +396,7 @@
             }
         });
         
+        // 搜索框回车事件
         searchInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 const keyword = searchInput.value.trim();
@@ -338,7 +408,9 @@
             }
         });
         
+        // 返回按钮点击事件
         document.querySelector('.back-button').addEventListener('click', () => {
+            // 关闭更多菜单
             hideMoreMenu();
             pages.forEach(page => {
                 page.classList.remove('active', 'from-right', 'from-left', 'to-right', 'to-left');
@@ -352,25 +424,30 @@
             initChatPage();
         });
         
+        // 获取更多菜单相关元素
         const moreButton = document.querySelector('.more-button');
         const moreMenuOverlay = document.querySelector('.more-menu-overlay');
         const moreMenu = document.querySelector('.more-menu');
         const moreMenuCancel = document.querySelector('.more-menu-cancel');
         
+        // 显示更多菜单
         function showMoreMenu() {
             moreMenuOverlay.classList.add('active');
             moreMenu.classList.add('active');
         }
         
+        // 隐藏更多菜单
         function hideMoreMenu() {
             moreMenuOverlay.classList.remove('active');
             moreMenu.classList.remove('active');
         }
         
+        // 绑定更多菜单事件
         moreButton.addEventListener('click', showMoreMenu);
         moreMenuOverlay.addEventListener('click', hideMoreMenu);
         moreMenuCancel.addEventListener('click', hideMoreMenu);
         
+        // 标签栏点击事件
         tabItems.forEach(item => {
             item.addEventListener('click', () => {
                 const targetTab = item.dataset.tab;

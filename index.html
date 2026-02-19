@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>遇见小程序</title>
+    <title>喻见小程序</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -178,7 +178,16 @@
             });
             
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            switchPage('chat-detail');
+            
+            pages.forEach(page => {
+                page.classList.remove('active', 'from-right', 'from-left', 'to-right', 'to-left');
+            });
+            
+            const chatDetailPage = document.querySelector('.page-chat-detail');
+            chatDetailPage.classList.add('active');
+            tabBar.style.display = 'none';
+            previousPage = currentPage;
+            currentPage = 'chat-detail';
         }
         
         function initChatPage() {
@@ -192,7 +201,7 @@
             currentPage = targetPage;
             
             let slideDirection = '';
-            const rightTabs = ['recommend', 'community', 'chat-detail'];
+            const rightTabs = ['recommend', 'community'];
             const leftTabs = ['find', 'profile'];
             
             if (targetPage === 'message') {
@@ -214,10 +223,12 @@
             });
             
             const targetPageElement = document.querySelector(`.page-${targetPage}`);
-            if (slideDirection) {
-                targetPageElement.classList.add(slideDirection);
+            if (targetPageElement) {
+                if (slideDirection) {
+                    targetPageElement.classList.add(slideDirection);
+                }
+                targetPageElement.classList.add('active');
             }
-            targetPageElement.classList.add('active');
             
             if (targetPage === 'message') {
                 initChatPage();
@@ -254,7 +265,16 @@
         });
         
         document.querySelector('.back-button').addEventListener('click', () => {
-            switchPage('message');
+            pages.forEach(page => {
+                page.classList.remove('active', 'from-right', 'from-left', 'to-right', 'to-left');
+            });
+            
+            const messagePage = document.querySelector('.page-message');
+            messagePage.classList.add('active');
+            tabBar.style.display = 'flex';
+            previousPage = currentPage;
+            currentPage = 'message';
+            initChatPage();
         });
         
         tabItems.forEach(item => {

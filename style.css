@@ -247,15 +247,17 @@ body {
     right: 0;
     bottom: 0;
     overflow-y: auto;
-    padding: 0 15px;
+    padding: 15px;
 }
 
 /* 聊天列表项 */
 .chat-item {
     display: flex;
     align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 12px;
     cursor: pointer;
 }
 
@@ -270,7 +272,7 @@ body {
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    background-color: #D6E6F9;
+    object-fit: cover;
 }
 
 /* 在线状态圆点 */
@@ -383,7 +385,9 @@ body {
 /* 消息项 */
 .message-item {
     display: flex;
+    align-items: flex-end;
     margin-bottom: 15px;
+    gap: 8px;
 }
 
 /* 对方消息 */
@@ -394,6 +398,14 @@ body {
 /* 我的消息 */
 .message-me {
     justify-content: flex-end;
+}
+
+/* 消息头像 */
+.message-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* 消息气泡 */

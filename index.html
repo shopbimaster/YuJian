@@ -92,27 +92,27 @@
     
     <script>
         const mockFriends = [
-            { id: 1, nickname: '小明', avatar: '', is_read: false, unread_count: 3, is_online: true, chat_history: [
+            { id: 1, nickname: '小明', avatar: 'person/boy1.jpg', is_read: false, unread_count: 1, is_online: true, chat_history: [
                 { is_me: false, time: '2026-02-19 14:30', content: '你好！' },
                 { is_me: true, time: '2026-02-19 14:31', content: '你好呀！' },
                 { is_me: false, time: '2026-02-19 14:32', content: '今天天气不错' }
             ]},
-            { id: 2, nickname: '小红', avatar: '', is_read: true, unread_count: 0, is_online: false, chat_history: [
+            { id: 2, nickname: '小红', avatar: 'person/girl1.jpg', is_read: true, unread_count: 0, is_online: false, chat_history: [
                 { is_me: true, time: '2026-02-18 19:20', content: '明天有空吗？' },
                 { is_me: false, time: '2026-02-18 19:25', content: '有的，什么事？' }
             ]},
-            { id: 3, nickname: '小李', avatar: '', is_read: false, unread_count: 1, is_online: true, chat_history: [
+            { id: 3, nickname: '小李', avatar: 'person/boy2.jpg', is_read: false, unread_count: 1, is_online: true, chat_history: [
                 { is_me: false, time: '2026-02-19 10:15', content: '周末一起去爬山吧' }
             ]},
-            { id: 4, nickname: '小王', avatar: '', is_read: true, unread_count: 0, is_online: true, chat_history: [
+            { id: 4, nickname: '小王', avatar: 'person/boy3.jpg', is_read: true, unread_count: 0, is_online: true, chat_history: [
                 { is_me: true, time: '2026-02-17 16:45', content: '收到了，谢谢！' },
                 { is_me: false, time: '2026-02-17 16:46', content: '不客气～' }
             ]},
-            { id: 5, nickname: '小张', avatar: '', is_read: false, unread_count: 2, is_online: false, chat_history: [
+            { id: 5, nickname: '小张', avatar: 'person/girl2.jpg', is_read: false, unread_count: 2, is_online: false, chat_history: [
                 { is_me: false, time: '2026-02-19 09:00', content: '早上好！' },
                 { is_me: false, time: '2026-02-19 09:05', content: '今天记得开会' }
             ]},
-            { id: 6, nickname: '小赵', avatar: '', is_read: true, unread_count: 0, is_online: true, chat_history: [
+            { id: 6, nickname: '小赵', avatar: 'person/girl3.jpg', is_read: true, unread_count: 0, is_online: true, chat_history: [
                 { is_me: true, time: '2026-02-16 21:30', content: '晚安' },
                 { is_me: false, time: '2026-02-16 21:32', content: '晚安，好梦！' }
             ]}
@@ -149,7 +149,7 @@
                 
                 chatItem.innerHTML = `
                     <div class="chat-avatar-container">
-                        <div class="chat-avatar"></div>
+                        <img class="chat-avatar" src="${friend.avatar}" alt="${friend.nickname}">
                         ${friend.is_online ? '<div class="online-dot"></div>' : ''}
                     </div>
                     <div class="chat-info">
@@ -173,7 +173,25 @@
             friend.chat_history.forEach(msg => {
                 const messageItem = document.createElement('div');
                 messageItem.className = `message-item ${msg.is_me ? 'message-me' : 'message-other'}`;
-                messageItem.innerHTML = `<div class="message-bubble">${msg.content}</div>`;
+                
+                let avatarImg = '';
+                if (!msg.is_me) {
+                    avatarImg = `<img class="message-avatar" src="${friend.avatar}" alt="${friend.nickname}">`;
+                } else {
+                    avatarImg = `<img class="message-avatar" src="person/girl4.jpg" alt="我">`;
+                }
+                
+                if (msg.is_me) {
+                    messageItem.innerHTML = `
+                        <div class="message-bubble">${msg.content}</div>
+                        ${avatarImg}
+                    `;
+                } else {
+                    messageItem.innerHTML = `
+                        ${avatarImg}
+                        <div class="message-bubble">${msg.content}</div>
+                    `;
+                }
                 messagesContainer.appendChild(messageItem);
             });
             

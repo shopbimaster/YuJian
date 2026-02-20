@@ -834,12 +834,14 @@ body {
 
 /* 不感兴趣按钮 */
 .action-button-dislike {
-  color: #ff3b30;
+  background: linear-gradient(90deg, #ff6b6b 0%, #ee5a5a 100%);
+  color: #ffffff;
 }
 
 /* 喜欢按钮 */
 .action-button-like {
-  color: #ff2d55;
+  background: linear-gradient(90deg, #5ac8fa 0%, #4a9eff 100%);
+  color: #ffffff;
 }
 
 /* 收藏按钮 */

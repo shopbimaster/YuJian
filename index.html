@@ -110,7 +110,7 @@
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                stroke-width="3.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
@@ -119,14 +119,7 @@
               </svg>
             </button>
             <button class="action-button action-button-like" data-action="like">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
                 <path
                   d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
                 ></path>
@@ -823,7 +816,7 @@
 
       // 卡片堆栈管理
       let cardStack = [0, 1, 2, 3]; // 当前可见的卡片索引顺序
-      let cardHistory = []; // 历史记录，用于返回功能
+      let cardHistory = []; // 历史记录，用于返回功能，保存 {stack, direction}
       let isAnimating = false;
 
       // 更新卡片样式
@@ -866,20 +859,26 @@
       }
 
       // 移除最前面的卡片
-      function removeFrontCard() {
+      function removeFrontCard(direction) {
         if (cardStack.length === 0 || isAnimating) return;
 
         isAnimating = true;
 
-        // 保存历史
-        cardHistory.push([...cardStack]);
+        // 保存历史，包括滑出方向
+        cardHistory.push({ stack: [...cardStack], direction: direction });
 
         const frontCard = document.querySelector(
           `.recommend-card[data-index="${cardStack[0]}"]`,
         );
         if (frontCard) {
           frontCard.style.transition = "all 0.3s ease";
-          frontCard.style.transform = "translateX(-120%) rotate(-10deg)";
+
+          // 根据方向设置滑出动画
+          if (direction === "left") {
+            frontCard.style.transform = "translateX(-120%) rotate(-10deg)";
+          } else {
+            frontCard.style.transform = "translateX(120%) rotate(10deg)";
+          }
           frontCard.style.opacity = "0";
 
           setTimeout(() => {
@@ -903,7 +902,10 @@
         isAnimating = true;
 
         // 恢复历史状态
-        cardStack = cardHistory.pop();
+        const historyItem = cardHistory.pop();
+        cardStack = historyItem.stack;
+        const direction = historyItem.direction;
+
         updateCards();
 
         const frontCard = document.querySelector(
@@ -911,7 +913,13 @@
         );
         if (frontCard) {
           frontCard.style.transition = "";
-          frontCard.style.transform = "translateX(-120%) rotate(-10deg)";
+
+          // 根据原来的滑出方向，从相反方向滑入
+          if (direction === "left") {
+            frontCard.style.transform = "translateX(-120%) rotate(-10deg)";
+          } else {
+            frontCard.style.transform = "translateX(120%) rotate(10deg)";
+          }
           frontCard.style.opacity = "0";
 
           setTimeout(() => {
@@ -940,9 +948,13 @@
               restoreCard();
               break;
             case "dislike":
+              // 不感兴趣，左滑出
+              removeFrontCard("left");
+              break;
             case "like":
             case "favorite":
-              removeFrontCard();
+              // 喜欢和收藏，右滑出
+              removeFrontCard("right");
               break;
           }
         });

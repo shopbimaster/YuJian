@@ -143,6 +143,30 @@
               </svg>
             </button>
           </div>
+          <!-- 卡片详情页 -->
+          <div class="card-detail-overlay"></div>
+          <div class="card-detail-page">
+            <button class="card-detail-back-button">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="card-detail-image-container">
+              <img class="card-detail-image" src="" alt="" />
+            </div>
+            <div class="card-detail-info">
+              <div class="card-detail-name"></div>
+              <div class="card-detail-basic"></div>
+              <div class="card-detail-desc"></div>
+            </div>
+          </div>
         </div>
         <!-- 社区页面 -->
         <div class="page page-community" data-page="community"></div>
@@ -803,6 +827,38 @@
         });
       });
 
+      // 人物详细数据
+      const personDetailData = [
+        {
+          index: 0,
+          name: "小雪",
+          basic: "女 · 22岁",
+          image: "recommend/girl-skiing.jpg",
+          desc: "还记得那个冬天的滑雪场吗？阳光洒在雪地上，闪闪发光，就像你那双爱笑的眼睛。你说你最喜欢冬天，因为可以在雪地里自由滑行，感受风从耳边呼啸而过的感觉。每次摔倒你都会笑着爬起来，拍拍身上的雪说：「这可是滑雪的必修课呀！」你的乐观感染了身边的每一个人，和你在一起的每一天都像是在过节。",
+        },
+        {
+          index: 1,
+          name: "小琳",
+          basic: "女 · 23岁",
+          image: "recommend/girl-photoing.jpg",
+          desc: "摄影是你记录生活的方式，也是你与世界对话的语言。你总说：「最好的照片不是拍出来的，而是等出来的。」于是你愿意在清晨的山顶等待日出，在黄昏的海边守候日落，在雨后的巷子里捕捉那道转瞬即逝的彩虹。你的相机里装满了故事，每一张照片背后都有一段温暖的回忆。",
+        },
+        {
+          index: 2,
+          name: "小美",
+          basic: "女 · 23岁",
+          image: "recommend/girl-shopping.jpg",
+          desc: "逛街对你来说从来不是一项任务，而是一场发现美的冒险。你总能在琳琅满目的店铺里发现那些被别人忽略的小美好——也许是一条别致的项链，也许是一件设计独特的衣服，也许只是一杯好看的奶茶。你说：「生活中不缺少美，缺少的是发现美的眼睛和愿意停下来欣赏的心情。」",
+        },
+        {
+          index: 3,
+          name: "小宇",
+          basic: "男 · 24岁",
+          image: "recommend/boy-badminton.jpg",
+          desc: "羽毛球场上的你总是那么耀眼，每一次挥拍都充满了力量与美感。你说打球不仅是为了锻炼身体，更是为了释放压力，享受那种挥汗如雨的畅快。每周五的晚上是你固定的球友时间，不管工作多忙你都会准时出现。你常说：「生活就像打羽毛球，你永远不知道下一个球会从哪里来，但你只要准备好，就一定能接得住。」",
+        },
+      ];
+
       // 获取推荐标签元素
       const recommendTabs = document.querySelectorAll(".recommend-tab");
 
@@ -813,6 +869,31 @@
           tab.classList.add("active");
         });
       });
+
+      // 打开卡片详情页
+      function openCardDetail(personIndex) {
+        const person = personDetailData[personIndex];
+        if (!person) return;
+
+        // 设置详情页内容
+        document.querySelector(".card-detail-image").src = person.image;
+        document.querySelector(".card-detail-image").alt = person.name;
+        document.querySelector(".card-detail-name").textContent = person.name;
+        document.querySelector(".card-detail-basic").textContent = person.basic;
+        document.querySelector(".card-detail-desc").textContent = person.desc;
+
+        // 显示详情页
+        document.querySelector(".card-detail-overlay").classList.add("active");
+        document.querySelector(".card-detail-page").classList.add("active");
+      }
+
+      // 关闭卡片详情页
+      function closeCardDetail() {
+        document
+          .querySelector(".card-detail-overlay")
+          .classList.remove("active");
+        document.querySelector(".card-detail-page").classList.remove("active");
+      }
 
       // 卡片堆栈管理
       let cardStack = [0, 1, 2, 3]; // 当前可见的卡片索引顺序
@@ -959,6 +1040,28 @@
           }
         });
       });
+
+      // 卡片点击事件 - 打开详情页
+      const cards = document.querySelectorAll(".recommend-card");
+      cards.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          // 如果卡片不在最前面，不响应点击
+          if (!card.classList.contains("recommend-card-front")) return;
+
+          const index = parseInt(card.dataset.index);
+          openCardDetail(index);
+        });
+      });
+
+      // 详情页返回按钮点击事件
+      document
+        .querySelector(".card-detail-back-button")
+        .addEventListener("click", closeCardDetail);
+
+      // 点击遮罩层关闭详情页
+      document
+        .querySelector(".card-detail-overlay")
+        .addEventListener("click", closeCardDetail);
     </script>
   </body>
 </html>

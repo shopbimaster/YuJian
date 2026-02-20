@@ -171,40 +171,74 @@ body {
   transform: translateX(0);
 }
 
-/* 从右侧滑入动画 */
-.page.from-right {
+/* tab页面动画样式 */
+.page.page-recommend,
+.page.page-community,
+.page.page-message,
+.page.page-find,
+.page.page-profile {
+  /* tab页面默认状态 */
+}
+
+/* tab页面从右侧滑入动画 */
+.page.page-recommend.from-right,
+.page.page-community.from-right,
+.page.page-message.from-right,
+.page.page-find.from-right,
+.page.page-profile.from-right {
   transform: translateX(100%);
 }
 
-.page.active.from-right {
+.page.page-recommend.active.from-right,
+.page.page-community.active.from-right,
+.page.page-message.active.from-right,
+.page.page-find.active.from-right,
+.page.page-profile.active.from-right {
   transform: translateX(0);
 }
 
-/* 从左侧滑入动画 */
-.page.from-left {
+/* tab页面从左侧滑入动画 */
+.page.page-recommend.from-left,
+.page.page-community.from-left,
+.page.page-message.from-left,
+.page.page-find.from-left,
+.page.page-profile.from-left {
   transform: translateX(-100%);
 }
 
-.page.active.from-left {
+.page.page-recommend.active.from-left,
+.page.page-community.active.from-left,
+.page.page-message.active.from-left,
+.page.page-find.active.from-left,
+.page.page-profile.active.from-left {
   transform: translateX(0);
 }
 
-/* 向右侧滑出动画 */
-.page.to-right {
-  transform: translateX(0);
+/* 聊天详情页独立动画样式 */
+.page.page-chat-detail {
+  z-index: 5;
 }
 
-.page.active.to-right {
+/* 聊天详情页从右侧滑入（进入） */
+.page.page-chat-detail.from-right {
   transform: translateX(100%);
+  opacity: 0;
 }
 
-/* 向左侧滑出动画 */
-.page.to-left {
+.page.page-chat-detail.active.from-right {
   transform: translateX(0);
+  opacity: 1;
 }
 
-.page.active.to-left {
-  transform: translateX(-100%);
+/* 聊天详情页向右侧滑出（退出） */
+.page.page-chat-detail.to-right {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.page.page-chat-detail.active.to-right {
+  transform: translateX(100%);
+  opacity: 0;
 }
 
 /* 聊天标题 */
@@ -624,4 +658,130 @@ body {
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
+}
+
+/* 推荐页面标签栏 */
+.recommend-tabs {
+  position: absolute;
+  top: 54px;
+  left: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 40px;
+  z-index: 10;
+  width: 200px;
+}
+
+/* 推荐标签 */
+.recommend-tab {
+  font-size: 20px;
+  font-weight: 500;
+  color: #a3a1bf;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  line-height: 1.2;
+  display: flex;
+  align-items: flex-end;
+  height: 40px;
+}
+
+/* 推荐标签选中状态 */
+.recommend-tab.active {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* 推荐卡片容器 */
+.recommend-cards-container {
+  position: absolute;
+  top: 130px;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* 推荐卡片基础样式 */
+.recommend-card {
+  position: absolute;
+  width: 300px;
+  height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 卡片图片 */
+.recommend-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 卡片信息区域 */
+.recommend-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 16px 20px;
+}
+
+/* 卡片昵称 */
+.recommend-card-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 4px;
+}
+
+/* 卡片基本信息 */
+.recommend-card-basic {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 6px;
+}
+
+/* 卡片描述 */
+.recommend-card-desc {
+  font-size: 13px;
+  color: #a3a1bf;
+  line-height: 1.4;
+}
+
+/* 第四张卡片（隐藏） */
+.recommend-card-back-3 {
+  display: none;
+}
+
+/* 第三张卡片（最后面，最模糊） */
+.recommend-card-back-2 {
+  transform: scale(0.81) translateY(-60px);
+  filter: blur(8px);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* 第二张卡片（中间，中等模糊） */
+.recommend-card-back-1 {
+  transform: scale(0.9) translateY(-30px);
+  filter: blur(4px);
+  opacity: 0.7;
+  z-index: 2;
+}
+
+/* 第一张卡片（最前面，清晰） */
+.recommend-card-front {
+  transform: scale(1) translateY(0);
+  filter: blur(0);
+  opacity: 1;
+  z-index: 3;
 }

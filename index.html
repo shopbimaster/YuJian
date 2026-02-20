@@ -28,7 +28,7 @@
           <!-- 推荐卡片容器 -->
           <div class="recommend-cards-container">
             <!-- 卡片4（最下面，隐藏） -->
-            <div class="recommend-card recommend-card-back-3">
+            <div class="recommend-card recommend-card-back-3" data-index="3">
               <img
                 class="recommend-card-img"
                 src="recommend/boy-badminton.jpg"
@@ -43,7 +43,7 @@
               </div>
             </div>
             <!-- 卡片3（最后面，最模糊） -->
-            <div class="recommend-card recommend-card-back-2">
+            <div class="recommend-card recommend-card-back-2" data-index="2">
               <img
                 class="recommend-card-img"
                 src="recommend/girl-shopping.jpg"
@@ -58,7 +58,7 @@
               </div>
             </div>
             <!-- 卡片2（中间，中等模糊） -->
-            <div class="recommend-card recommend-card-back-1">
+            <div class="recommend-card recommend-card-back-1" data-index="1">
               <img
                 class="recommend-card-img"
                 src="recommend/boy-learning.jpg"
@@ -73,7 +73,7 @@
               </div>
             </div>
             <!-- 卡片1（最前面，清晰） -->
-            <div class="recommend-card recommend-card-front">
+            <div class="recommend-card recommend-card-front" data-index="0">
               <img
                 class="recommend-card-img"
                 src="recommend/girl-skiing.jpg"
@@ -87,6 +87,68 @@
                 </div>
               </div>
             </div>
+          </div>
+          <!-- 操作按钮容器 -->
+          <div class="action-buttons-container">
+            <button class="action-button action-button-back" data-action="back">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button
+              class="action-button action-button-dislike"
+              data-action="dislike"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+            <button class="action-button action-button-like" data-action="like">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </button>
+            <button
+              class="action-button action-button-favorite"
+              data-action="favorite"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                ></polygon>
+              </svg>
+            </button>
           </div>
         </div>
         <!-- 社区页面 -->
@@ -756,6 +818,133 @@
         tab.addEventListener("click", () => {
           recommendTabs.forEach((t) => t.classList.remove("active"));
           tab.classList.add("active");
+        });
+      });
+
+      // 卡片堆栈管理
+      let cardStack = [0, 1, 2, 3]; // 当前可见的卡片索引顺序
+      let cardHistory = []; // 历史记录，用于返回功能
+      let isAnimating = false;
+
+      // 更新卡片样式
+      function updateCards() {
+        const cards = document.querySelectorAll(".recommend-card");
+        cards.forEach((card) => {
+          card.classList.remove(
+            "recommend-card-front",
+            "recommend-card-back-1",
+            "recommend-card-back-2",
+            "recommend-card-back-3",
+          );
+        });
+
+        // 设置前三个可见卡片
+        if (cardStack.length > 0) {
+          const frontCard = document.querySelector(
+            `.recommend-card[data-index="${cardStack[0]}"]`,
+          );
+          if (frontCard) frontCard.classList.add("recommend-card-front");
+        }
+        if (cardStack.length > 1) {
+          const back1Card = document.querySelector(
+            `.recommend-card[data-index="${cardStack[1]}"]`,
+          );
+          if (back1Card) back1Card.classList.add("recommend-card-back-1");
+        }
+        if (cardStack.length > 2) {
+          const back2Card = document.querySelector(
+            `.recommend-card[data-index="${cardStack[2]}"]`,
+          );
+          if (back2Card) back2Card.classList.add("recommend-card-back-2");
+        }
+        if (cardStack.length > 3) {
+          const back3Card = document.querySelector(
+            `.recommend-card[data-index="${cardStack[3]}"]`,
+          );
+          if (back3Card) back3Card.classList.add("recommend-card-back-3");
+        }
+      }
+
+      // 移除最前面的卡片
+      function removeFrontCard() {
+        if (cardStack.length === 0 || isAnimating) return;
+
+        isAnimating = true;
+
+        // 保存历史
+        cardHistory.push([...cardStack]);
+
+        const frontCard = document.querySelector(
+          `.recommend-card[data-index="${cardStack[0]}"]`,
+        );
+        if (frontCard) {
+          frontCard.style.transition = "all 0.3s ease";
+          frontCard.style.transform = "translateX(-120%) rotate(-10deg)";
+          frontCard.style.opacity = "0";
+
+          setTimeout(() => {
+            // 移除最前面的卡片
+            cardStack.shift();
+            frontCard.style.transition = "";
+            frontCard.style.transform = "";
+            frontCard.style.opacity = "";
+            updateCards();
+            isAnimating = false;
+          }, 300);
+        } else {
+          isAnimating = false;
+        }
+      }
+
+      // 返回上一个卡片
+      function restoreCard() {
+        if (cardHistory.length === 0 || isAnimating) return;
+
+        isAnimating = true;
+
+        // 恢复历史状态
+        cardStack = cardHistory.pop();
+        updateCards();
+
+        const frontCard = document.querySelector(
+          `.recommend-card[data-index="${cardStack[0]}"]`,
+        );
+        if (frontCard) {
+          frontCard.style.transition = "";
+          frontCard.style.transform = "translateX(-120%) rotate(-10deg)";
+          frontCard.style.opacity = "0";
+
+          setTimeout(() => {
+            frontCard.style.transition = "all 0.3s ease";
+            frontCard.style.transform = "";
+            frontCard.style.opacity = "";
+
+            setTimeout(() => {
+              frontCard.style.transition = "";
+              isAnimating = false;
+            }, 300);
+          }, 50);
+        } else {
+          isAnimating = false;
+        }
+      }
+
+      // 操作按钮点击事件
+      const actionButtons = document.querySelectorAll(".action-button");
+      actionButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const action = button.dataset.action;
+
+          switch (action) {
+            case "back":
+              restoreCard();
+              break;
+            case "dislike":
+            case "like":
+            case "favorite":
+              removeFrontCard();
+              break;
+          }
         });
       });
     </script>

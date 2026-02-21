@@ -169,7 +169,45 @@
           </div>
         </div>
         <!-- 社区页面 -->
-        <div class="page page-community" data-page="community"></div>
+        <div class="page page-community" data-page="community">
+          <div class="community-title">社区</div>
+          <div class="community-list"></div>
+          <!-- 图片放大查看遮罩 -->
+          <div class="community-image-overlay"></div>
+          <div class="community-image-viewer">
+            <button class="community-image-close">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+            <img class="community-viewer-image" src="" alt="" />
+          </div>
+          <!-- 社区发布详情页 -->
+          <div class="community-post-detail-overlay"></div>
+          <div class="community-post-detail-page">
+            <button class="community-post-detail-close">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="community-post-detail-content"></div>
+          </div>
+        </div>
 
         <!-- 聊天列表页面 -->
         <div class="page page-message" data-page="message">
@@ -739,6 +777,8 @@
 
         if (targetTab === "message") {
           initChatPage();
+        } else if (targetTab === "community") {
+          initCommunityPage();
         }
       }
 
@@ -1062,6 +1102,278 @@
       document
         .querySelector(".card-detail-overlay")
         .addEventListener("click", closeCardDetail);
+
+      // 社区发布数据
+      const communityPosts = [
+        {
+          id: 1,
+          author: {
+            nickname: "小明",
+            avatar: "person/boy1.jpg",
+          },
+          club: "自行车",
+          clubTag: "bicycleclub",
+          content:
+            "今天天气真好！和俱乐部的小伙伴们一起骑行去郊外，沿途的风景太美了～",
+          images: [
+            "clubs/bicycleclub/15cd-c8a4f38ac0895c6e11d04ddd3410955c.jpg",
+            "clubs/bicycleclub/IMG_20241110_121547.jpg",
+            "clubs/bicycleclub/IMG_20241110_132523.jpg",
+          ],
+          time: "2小时前",
+          likes: 32,
+          favorites: 8,
+        },
+        {
+          id: 2,
+          author: {
+            nickname: "小红",
+            avatar: "person/girl1.jpg",
+          },
+          club: "美食",
+          clubTag: "foodclub",
+          content:
+            "周末和闺蜜探店成功！这家店的摆盘太精致了，每一道菜都是艺术品～",
+          images: [
+            "clubs/foodclub/IMG_20250603_183836.jpg",
+            "clubs/foodclub/IMG_20250623_191252.jpg",
+            "clubs/foodclub/IMG_20250720_153904.jpg",
+          ],
+          time: "5小时前",
+          likes: 45,
+          favorites: 12,
+        },
+        {
+          id: 3,
+          author: {
+            nickname: "小李",
+            avatar: "person/boy2.jpg",
+          },
+          club: "旅行",
+          clubTag: "travelclub",
+          content:
+            "终于来到了心心念念的山间！云雾缭绕，仿佛置身仙境，这一刻所有的烦恼都烟消云散了。",
+          images: [
+            "clubs/travelclub/mountain-9423779_1280.jpg",
+            "clubs/travelclub/mountains-1113547_1280.jpg",
+            "clubs/travelclub/road-8157300_1280.jpg",
+          ],
+          time: "昨天",
+          likes: 68,
+          favorites: 21,
+        },
+        {
+          id: 4,
+          author: {
+            nickname: "小王",
+            avatar: "person/boy3.jpg",
+          },
+          club: "自行车",
+          clubTag: "bicycleclub",
+          content:
+            "夜骑结束！城市的夜景别有一番风味，晚风拂面，感觉整个人都放松了。",
+          images: [
+            "clubs/bicycleclub/IMG_20241110_121547.jpg",
+            "clubs/bicycleclub/15cd-c8a4f38ac0895c6e11d04ddd3410955c.jpg",
+            "clubs/bicycleclub/IMG_20241110_132523.jpg",
+          ],
+          time: "2天前",
+          likes: 25,
+          favorites: 6,
+        },
+      ];
+
+      // 渲染社区页面
+      function renderCommunityList() {
+        const communityList = document.querySelector(".community-list");
+        communityList.innerHTML = "";
+
+        communityPosts.forEach((post) => {
+          const postCard = document.createElement("div");
+          postCard.className = "community-post-card";
+
+          postCard.innerHTML = `
+                    <div class="community-post-header">
+                        <div class="community-avatar-container">
+                            <img class="community-avatar" src="${post.author.avatar}" alt="${post.author.nickname}">
+                        </div>
+                        <div class="community-author-info">
+                            <div class="community-author-name">${post.author.nickname}</div>
+                        </div>
+                        <div class="community-tag">${post.club}</div>
+                    </div>
+                    <div class="community-post-content" data-post-id="${post.id}">${post.content}</div>
+                    <div class="community-post-images">
+                        <img class="community-post-image" src="${post.images[0]}" alt="" data-post-id="${post.id}" data-image-index="0">
+                        <img class="community-post-image" src="${post.images[1]}" alt="" data-post-id="${post.id}" data-image-index="1">
+                        <img class="community-post-image" src="${post.images[2]}" alt="" data-post-id="${post.id}" data-image-index="2">
+                    </div>
+                    <div class="community-post-footer">
+                        <div class="community-post-time">${post.time}</div>
+                        <div class="community-post-stats">
+                            <div class="community-stat-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                                <span>${post.likes}</span>
+                            </div>
+                            <div class="community-stat-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <span>${post.favorites}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+          communityList.appendChild(postCard);
+        });
+
+        // 绑定图片点击事件
+        document.querySelectorAll(".community-post-image").forEach((img) => {
+          img.addEventListener("click", (e) => {
+            const postId = parseInt(img.dataset.postId);
+            const imageIndex = parseInt(img.dataset.imageIndex);
+            openCommunityImage(postId, imageIndex);
+          });
+        });
+
+        // 绑定文本点击事件
+        document
+          .querySelectorAll(".community-post-content")
+          .forEach((content) => {
+            content.addEventListener("click", (e) => {
+              const postId = parseInt(content.dataset.postId);
+              openCommunityPostDetail(postId);
+            });
+          });
+      }
+
+      // 打开社区图片放大查看
+      function openCommunityImage(postId, imageIndex) {
+        const post = communityPosts.find((p) => p.id === postId);
+        if (!post) return;
+
+        document.querySelector(".community-viewer-image").src =
+          post.images[imageIndex];
+        document
+          .querySelector(".community-image-overlay")
+          .classList.add("active");
+        document
+          .querySelector(".community-image-viewer")
+          .classList.add("active");
+      }
+
+      // 关闭社区图片放大查看
+      function closeCommunityImage() {
+        document
+          .querySelector(".community-image-overlay")
+          .classList.remove("active");
+        document
+          .querySelector(".community-image-viewer")
+          .classList.remove("active");
+      }
+
+      // 打开社区发布详情页
+      function openCommunityPostDetail(postId) {
+        const post = communityPosts.find((p) => p.id === postId);
+        if (!post) return;
+
+        const detailContent = document.querySelector(
+          ".community-post-detail-content",
+        );
+        detailContent.innerHTML = `
+                    <div class="community-post-header" style="margin-bottom: 20px;">
+                        <div class="community-avatar-container">
+                            <img class="community-avatar" src="${post.author.avatar}" alt="${post.author.nickname}">
+                        </div>
+                        <div class="community-author-info">
+                            <div class="community-author-name">${post.author.nickname}</div>
+                        </div>
+                        <div class="community-tag">${post.club}</div>
+                    </div>
+                    <div class="community-post-content" style="margin-bottom: 20px; cursor: default;">${post.content}</div>
+                    <div class="community-post-images" style="margin-bottom: 20px;">
+                        <img class="community-post-image" src="${post.images[0]}" alt="" data-post-id="${post.id}" data-image-index="0">
+                        <img class="community-post-image" src="${post.images[1]}" alt="" data-post-id="${post.id}" data-image-index="1">
+                        <img class="community-post-image" src="${post.images[2]}" alt="" data-post-id="${post.id}" data-image-index="2">
+                    </div>
+                    <div class="community-post-footer">
+                        <div class="community-post-time">${post.time}</div>
+                        <div class="community-post-stats">
+                            <div class="community-stat-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                                <span>${post.likes}</span>
+                            </div>
+                            <div class="community-stat-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <span>${post.favorites}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+        document
+          .querySelector(".community-post-detail-overlay")
+          .classList.add("active");
+        document
+          .querySelector(".community-post-detail-page")
+          .classList.add("active");
+
+        // 绑定详情页图片点击事件
+        document
+          .querySelectorAll(".community-post-detail-page .community-post-image")
+          .forEach((img) => {
+            img.addEventListener("click", (e) => {
+              const postId = parseInt(img.dataset.postId);
+              const imageIndex = parseInt(img.dataset.imageIndex);
+              openCommunityImage(postId, imageIndex);
+            });
+          });
+      }
+
+      // 关闭社区发布详情页
+      function closeCommunityPostDetail() {
+        document
+          .querySelector(".community-post-detail-overlay")
+          .classList.remove("active");
+        document
+          .querySelector(".community-post-detail-page")
+          .classList.remove("active");
+      }
+
+      // 社区事件是否已绑定
+      let communityEventsBound = false;
+
+      // 初始化社区页面
+      function initCommunityPage() {
+        renderCommunityList();
+
+        if (!communityEventsBound) {
+          // 绑定图片查看器关闭事件
+          document
+            .querySelector(".community-image-close")
+            .addEventListener("click", closeCommunityImage);
+          document
+            .querySelector(".community-image-overlay")
+            .addEventListener("click", closeCommunityImage);
+
+          // 绑定发布详情页关闭事件
+          document
+            .querySelector(".community-post-detail-close")
+            .addEventListener("click", closeCommunityPostDetail);
+          document
+            .querySelector(".community-post-detail-overlay")
+            .addEventListener("click", closeCommunityPostDetail);
+
+          communityEventsBound = true;
+        }
+      }
     </script>
   </body>
 </html>

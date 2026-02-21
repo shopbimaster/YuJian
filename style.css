@@ -953,3 +953,299 @@ body {
   color: #333333;
   line-height: 1.8;
 }
+
+/* 社区页面标题 */
+.community-title {
+  position: absolute;
+  left: 30px;
+  top: 54px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* 社区列表容器 */
+.community-list {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  padding: 15px;
+  padding-bottom: 140px;
+}
+
+/* 社区发布卡片 */
+.community-post-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 15px;
+}
+
+/* 发布者头部信息 */
+.community-post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* 发布者头像容器 */
+.community-avatar-container {
+  position: relative;
+  margin-right: 12px;
+}
+
+/* 发布者头像 */
+.community-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 发布者信息 */
+.community-author-info {
+  flex: 1;
+}
+
+/* 发布者昵称 */
+.community-author-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 2px;
+}
+
+/* 社区标签 */
+.community-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: linear-gradient(90deg, #5ac8fa 0%, #4a9eff 100%);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+/* 发布图片容器 */
+.community-post-images {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* 发布图片 */
+.community-post-image {
+  flex: 1;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* 发布底部信息 */
+.community-post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 发布时间 */
+.community-post-time {
+  font-size: 13px;
+  color: #a3a1bf;
+}
+
+/* 互动数据 */
+.community-post-stats {
+  display: flex;
+  gap: 16px;
+}
+
+/* 互动项 */
+.community-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #a3a1bf;
+}
+
+.community-stat-item svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* 发布内容文字 */
+.community-post-content {
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+/* 发布图片容器 - 横向滚动 */
+.community-post-images {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 4px 0;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 发布图片 */
+.community-post-image {
+  flex-shrink: 0;
+  width: 260px;
+  height: 170px;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* 第一张图片宽度自适应，但露出一部分下一张 */
+.community-post-images .community-post-image:first-child {
+  width: calc(100% - 70px);
+  max-width: 260px;
+}
+
+/* 图片放大查看遮罩 */
+.community-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.community-image-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 图片放大查看器 */
+.community-image-viewer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.community-image-viewer.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.community-viewer-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* 图片关闭按钮 */
+.community-image-close {
+  position: absolute;
+  top: 54px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  z-index: 10;
+}
+
+.community-image-close svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* 社区发布详情页遮罩 */
+.community-post-detail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 80;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.community-post-detail-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 社区发布详情页 */
+.community-post-detail-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  z-index: 81;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  overflow-y: auto;
+}
+
+.community-post-detail-page.active {
+  transform: translateY(0);
+}
+
+/* 详情页关闭按钮 */
+.community-post-detail-close {
+  position: absolute;
+  top: 54px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333333;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.community-post-detail-close svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* 详情页内容 */
+.community-post-detail-content {
+  padding: 120px 24px 100px;
+}

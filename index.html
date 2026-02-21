@@ -1123,6 +1123,8 @@
           time: "2小时前",
           likes: 32,
           favorites: 8,
+          isLiked: false,
+          isFavorited: false,
         },
         {
           id: 2,
@@ -1142,6 +1144,8 @@
           time: "5小时前",
           likes: 45,
           favorites: 12,
+          isLiked: false,
+          isFavorited: false,
         },
         {
           id: 3,
@@ -1161,6 +1165,8 @@
           time: "昨天",
           likes: 68,
           favorites: 21,
+          isLiked: false,
+          isFavorited: false,
         },
         {
           id: 4,
@@ -1180,6 +1186,8 @@
           time: "2天前",
           likes: 25,
           favorites: 6,
+          isLiked: false,
+          isFavorited: false,
         },
       ];
 
@@ -1211,14 +1219,14 @@
                     <div class="community-post-footer">
                         <div class="community-post-time">${post.time}</div>
                         <div class="community-post-stats">
-                            <div class="community-stat-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <div class="community-stat-item community-like-button ${post.isLiked ? "active" : ""}" data-post-id="${post.id}" data-action="like">
+                                <svg viewBox="0 0 24 24" fill="${post.isLiked ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                                 </svg>
                                 <span>${post.likes}</span>
                             </div>
-                            <div class="community-stat-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <div class="community-stat-item community-favorite-button ${post.isFavorited ? "active" : ""}" data-post-id="${post.id}" data-action="favorite">
+                                <svg viewBox="0 0 24 24" fill="${post.isFavorited ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                                 </svg>
                                 <span>${post.favorites}</span>
@@ -1248,6 +1256,25 @@
               openCommunityPostDetail(postId);
             });
           });
+
+        // 绑定点赞和收藏点击事件
+        document.querySelectorAll(".community-like-button").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const postId = parseInt(btn.dataset.postId);
+            toggleLike(postId);
+          });
+        });
+
+        document
+          .querySelectorAll(".community-favorite-button")
+          .forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.stopPropagation();
+              const postId = parseInt(btn.dataset.postId);
+              toggleFavorite(postId);
+            });
+          });
       }
 
       // 打开社区图片放大查看
@@ -1273,6 +1300,59 @@
         document
           .querySelector(".community-image-viewer")
           .classList.remove("active");
+      }
+
+      // 切换点赞状态
+      function toggleLike(postId) {
+        const post = communityPosts.find((p) => p.id === postId);
+        if (!post) return;
+
+        post.isLiked = !post.isLiked;
+        post.likes += post.isLiked ? 1 : -1;
+
+        // 更新列表中的显示
+        updatePostStats(postId);
+      }
+
+      // 切换收藏状态
+      function toggleFavorite(postId) {
+        const post = communityPosts.find((p) => p.id === postId);
+        if (!post) return;
+
+        post.isFavorited = !post.isFavorited;
+        post.favorites += post.isFavorited ? 1 : -1;
+
+        // 更新列表中的显示
+        updatePostStats(postId);
+      }
+
+      // 更新发布卡片的统计显示
+      function updatePostStats(postId) {
+        const post = communityPosts.find((p) => p.id === postId);
+        if (!post) return;
+
+        // 更新列表中的卡片
+        const listLikeButtons = document.querySelectorAll(
+          `.community-like-button[data-post-id="${postId}"]`,
+        );
+        listLikeButtons.forEach((btn) => {
+          btn.classList.toggle("active", post.isLiked);
+          const svg = btn.querySelector("svg");
+          svg.setAttribute("fill", post.isLiked ? "currentColor" : "none");
+          const span = btn.querySelector("span");
+          span.textContent = post.likes;
+        });
+
+        const listFavoriteButtons = document.querySelectorAll(
+          `.community-favorite-button[data-post-id="${postId}"]`,
+        );
+        listFavoriteButtons.forEach((btn) => {
+          btn.classList.toggle("active", post.isFavorited);
+          const svg = btn.querySelector("svg");
+          svg.setAttribute("fill", post.isFavorited ? "currentColor" : "none");
+          const span = btn.querySelector("span");
+          span.textContent = post.favorites;
+        });
       }
 
       // 打开社区发布详情页
@@ -1302,14 +1382,14 @@
                     <div class="community-post-footer">
                         <div class="community-post-time">${post.time}</div>
                         <div class="community-post-stats">
-                            <div class="community-stat-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <div class="community-stat-item community-like-button ${post.isLiked ? "active" : ""}" data-post-id="${post.id}" data-action="like">
+                                <svg viewBox="0 0 24 24" fill="${post.isLiked ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                                 </svg>
                                 <span>${post.likes}</span>
                             </div>
-                            <div class="community-stat-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <div class="community-stat-item community-favorite-button ${post.isFavorited ? "active" : ""}" data-post-id="${post.id}" data-action="favorite">
+                                <svg viewBox="0 0 24 24" fill="${post.isFavorited ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                                 </svg>
                                 <span>${post.favorites}</span>
@@ -1333,6 +1413,31 @@
               const postId = parseInt(img.dataset.postId);
               const imageIndex = parseInt(img.dataset.imageIndex);
               openCommunityImage(postId, imageIndex);
+            });
+          });
+
+        // 绑定详情页点赞和收藏点击事件
+        document
+          .querySelectorAll(
+            ".community-post-detail-page .community-like-button",
+          )
+          .forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.stopPropagation();
+              const postId = parseInt(btn.dataset.postId);
+              toggleLike(postId);
+            });
+          });
+
+        document
+          .querySelectorAll(
+            ".community-post-detail-page .community-favorite-button",
+          )
+          .forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.stopPropagation();
+              const postId = parseInt(btn.dataset.postId);
+              toggleFavorite(postId);
             });
           });
       }

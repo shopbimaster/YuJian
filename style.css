@@ -21,13 +21,18 @@ body {
 /* 主界面容器 */
 .app-container {
   position: relative;
-  width: 375px;
-  height: 812px;
+  width: 375px !important;
+  height: 812px !important;
+  max-width: 375px !important;
+  max-height: 812px !important;
+  min-width: 375px !important;
+  min-height: 812px !important;
   /* 10%圆角 */
   border-radius: 37.5px;
   /* 背景纯色 */
   background-color: #f6f6f9;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* 背景圆形容器 */
@@ -152,16 +157,17 @@ body {
 
 /* 页面基础样式 */
 .page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
   opacity: 0;
   visibility: hidden;
   transition:
     transform 0.3s ease,
     opacity 0.3s ease;
+  box-sizing: border-box;
 }
 
 /* 激活的页面 */
@@ -971,22 +977,25 @@ body {
 
 /* 社区列表容器 */
 .community-list {
-  position: absolute;
-  top: 120px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: auto;
-  padding: 15px;
-  padding-bottom: 140px;
+  position: absolute !important;
+  top: 120px !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  overflow-y: auto !important;
+  padding: 15px !important;
+  padding-bottom: 140px !important;
+  box-sizing: border-box !important;
 }
 
 /* 社区发布卡片 */
 .community-post-card {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 15px;
+  background-color: #ffffff !important;
+  border-radius: 16px !important;
+  padding: 16px !important;
+  margin-bottom: 15px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
 }
 
 /* 发布者头部信息 */
@@ -1314,14 +1323,15 @@ body {
 
 /* 头部容器 */
 .profile-header-container {
-  position: absolute;
-  left: 30px;
-  right: 30px;
-  top: 54px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  z-index: 2;
+  position: absolute !important;
+  left: 30px !important;
+  right: 30px !important;
+  top: 54px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  z-index: 2 !important;
+  box-sizing: border-box !important;
 }
 
 /* 欢迎文字 */
@@ -1390,36 +1400,39 @@ body {
 
 /* 菜单容器 */
 .profile-menu-container {
-  position: absolute;
-  left: 15px;
-  right: 15px;
-  bottom: 0;
-  background-color: #f6f6f9;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  padding: 20px 15px;
-  padding-bottom: 100px;
-  max-height: calc(100% - 160px);
-  overflow-y: hidden;
-  transform: translateY(100%);
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: absolute !important;
+  left: 15px !important;
+  right: 15px !important;
+  bottom: 0 !important;
+  background-color: #f6f6f9 !important;
+  border-top-left-radius: 30px !important;
+  border-top-right-radius: 30px !important;
+  padding: 20px 15px !important;
+  padding-bottom: 100px !important;
+  max-height: calc(100% - 160px) !important;
+  overflow-y: hidden !important;
+  transform: translateY(100%) !important;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  box-sizing: border-box !important;
 }
 
 .page-profile.active .profile-menu-container {
-  transform: translateY(0);
+  transform: translateY(0) !important;
 }
 
 /* 菜单项 */
 .profile-menu-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 12px 16px !important;
+  background-color: #ffffff !important;
+  border-radius: 12px !important;
+  margin-bottom: 10px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
 }
 
 .profile-menu-item:hover {

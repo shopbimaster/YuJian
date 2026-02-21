@@ -854,6 +854,11 @@ body {
 /* 收藏按钮 */
 .action-button-favorite {
   color: #ffcc00;
+  transition: all 0.2s ease;
+}
+
+.action-button-favorite:hover {
+  transform: scale(1.1);
 }
 
 /* 卡片详情页遮罩 */
@@ -1299,4 +1304,223 @@ body {
 /* 详情页内容 */
 .community-post-detail-content {
   padding: 120px 24px 100px;
+}
+
+/* 我的页面 */
+.page-profile {
+  background: linear-gradient(90deg, #1e5fb7 0%, #3999ed 50%, #67b8ff 100%);
+  overflow: hidden;
+}
+
+/* 头部容器 */
+.profile-header-container {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 54px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+/* 欢迎文字 */
+.profile-welcome-text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.welcome-line {
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+
+.name-line {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* 头像容器 */
+.profile-avatar-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* 头像 */
+.profile-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+}
+
+/* 头像编辑按钮 */
+.profile-avatar-edit-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #ff9500;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.profile-avatar-edit-button:hover {
+  transform: scale(1.1);
+  background-color: #e68600;
+}
+
+.profile-avatar-edit-button svg {
+  width: 14px;
+  height: 14px;
+  color: #ffffff;
+}
+
+/* 菜单容器 */
+.profile-menu-container {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+  background-color: #f6f6f9;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 20px 15px;
+  padding-bottom: 100px;
+  max-height: calc(100% - 160px);
+  overflow-y: hidden;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.page-profile.active .profile-menu-container {
+  transform: translateY(0);
+}
+
+/* 菜单项 */
+.profile-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-menu-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.profile-menu-item:active {
+  transform: scale(0.98);
+}
+
+.profile-menu-item span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.profile-menu-item svg {
+  width: 18px;
+  height: 18px;
+  color: #a3a1bf;
+}
+
+/* 我的页面详情页遮罩 */
+.page-profile-detail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 60;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.page-profile-detail-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 我的页面详情页 */
+.page-profile-detail-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  z-index: 61;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  overflow-y: auto;
+}
+
+.page-profile-detail-page.active {
+  transform: translateY(0);
+}
+
+/* 详情页返回按钮 */
+.profile-detail-back-button {
+  position: absolute;
+  top: 54px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333333;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-detail-back-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* 详情页标题 */
+.profile-detail-title {
+  position: absolute;
+  left: 80px;
+  top: 54px;
+  right: 80px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  z-index: 5;
+}
+
+/* 详情页内容 */
+.profile-detail-content {
+  padding: 120px 24px 100px;
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.8;
 }

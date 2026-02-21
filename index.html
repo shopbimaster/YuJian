@@ -293,7 +293,173 @@
         <!-- 觅伴页面 -->
         <div class="page page-find" data-page="find"></div>
         <!-- 我的页面 -->
-        <div class="page page-profile" data-page="profile"></div>
+        <div class="page page-profile" data-page="profile">
+          <div class="profile-header-container">
+            <div class="profile-welcome-text">
+              <div class="welcome-line">Welcome back，</div>
+              <div class="name-line">小玉</div>
+            </div>
+            <div class="profile-avatar-container">
+              <img
+                class="profile-avatar"
+                src="person/girl4.jpg"
+                alt="我的头像"
+              />
+              <button class="profile-avatar-edit-button">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+                  ></path>
+                  <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="profile-menu-container">
+            <div class="profile-menu-item" data-menu="profile">
+              <span>个人资料</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <div class="profile-menu-item" data-menu="certification">
+              <span>我的认证</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <div class="profile-menu-item" data-menu="mypick">
+              <span>我的pick</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <div class="profile-menu-item" data-menu="pickedme">
+              <span>谁pick了我</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <div class="profile-menu-item" data-menu="favorites">
+              <span>收藏夹</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <div class="profile-menu-item" data-menu="preferences">
+              <span>推荐偏好筛选</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <div class="profile-menu-item" data-menu="partners">
+              <span>我的搭子</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <div class="profile-menu-item" data-menu="settings">
+              <span>设置</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <div class="profile-menu-item" data-menu="help">
+              <span>帮助与反馈</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- 我的页面详情页 -->
+        <div class="page-profile-detail-overlay"></div>
+        <div class="page-profile-detail-page">
+          <button class="profile-detail-back-button">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <div class="profile-detail-title"></div>
+          <div class="profile-detail-content"></div>
+        </div>
       </div>
 
       <!-- 更多菜单遮罩层 -->
@@ -779,6 +945,8 @@
           initChatPage();
         } else if (targetTab === "community") {
           initCommunityPage();
+        } else if (targetTab === "profile") {
+          initProfilePage();
         }
       }
 
@@ -875,6 +1043,7 @@
           basic: "女 · 22岁",
           image: "recommend/girl-skiing.jpg",
           desc: "还记得那个冬天的滑雪场吗？阳光洒在雪地上，闪闪发光，就像你那双爱笑的眼睛。你说你最喜欢冬天，因为可以在雪地里自由滑行，感受风从耳边呼啸而过的感觉。每次摔倒你都会笑着爬起来，拍拍身上的雪说：「这可是滑雪的必修课呀！」你的乐观感染了身边的每一个人，和你在一起的每一天都像是在过节。",
+          isFavorited: false,
         },
         {
           index: 1,
@@ -882,20 +1051,23 @@
           basic: "女 · 23岁",
           image: "recommend/girl-photoing.jpg",
           desc: "摄影是你记录生活的方式，也是你与世界对话的语言。你总说：「最好的照片不是拍出来的，而是等出来的。」于是你愿意在清晨的山顶等待日出，在黄昏的海边守候日落，在雨后的巷子里捕捉那道转瞬即逝的彩虹。你的相机里装满了故事，每一张照片背后都有一段温暖的回忆。",
+          isFavorited: false,
         },
         {
           index: 2,
-          name: "小美",
+          name: "小琳",
           basic: "女 · 23岁",
           image: "recommend/girl-shopping.jpg",
           desc: "逛街对你来说从来不是一项任务，而是一场发现美的冒险。你总能在琳琅满目的店铺里发现那些被别人忽略的小美好——也许是一条别致的项链，也许是一件设计独特的衣服，也许只是一杯好看的奶茶。你说：「生活中不缺少美，缺少的是发现美的眼睛和愿意停下来欣赏的心情。」",
+          isFavorited: false,
         },
         {
           index: 3,
           name: "小宇",
-          basic: "男 · 24岁",
+          basic: "女 · 23岁",
           image: "recommend/boy-badminton.jpg",
           desc: "羽毛球场上的你总是那么耀眼，每一次挥拍都充满了力量与美感。你说打球不仅是为了锻炼身体，更是为了释放压力，享受那种挥汗如雨的畅快。每周五的晚上是你固定的球友时间，不管工作多忙你都会准时出现。你常说：「生活就像打羽毛球，你永远不知道下一个球会从哪里来，但你只要准备好，就一定能接得住。」",
+          isFavorited: false,
         },
       ];
 
@@ -1073,13 +1245,54 @@
               removeFrontCard("left");
               break;
             case "like":
-            case "favorite":
-              // 喜欢和收藏，右滑出
+              // 喜欢，右滑出
               removeFrontCard("right");
+              break;
+            case "favorite":
+              // 收藏，只切换状态，不划走卡片
+              if (cardStack.length > 0) {
+                const currentPersonIndex = cardStack[0];
+                const person = personDetailData[currentPersonIndex];
+                if (person) {
+                  person.isFavorited = !person.isFavorited;
+                  // 更新按钮样式
+                  updateFavoriteButtonStyle(currentPersonIndex);
+                }
+              }
               break;
           }
         });
       });
+
+      // 更新收藏按钮样式
+      function updateFavoriteButtonStyle(personIndex) {
+        const person = personDetailData[personIndex];
+        const favoriteButton = document.querySelector(
+          ".action-button-favorite",
+        );
+        if (person && favoriteButton) {
+          if (person.isFavorited) {
+            favoriteButton
+              .querySelector("svg")
+              .setAttribute("fill", "currentColor");
+            favoriteButton.style.transform = "scale(1.1)";
+            setTimeout(() => {
+              favoriteButton.style.transform = "scale(1)";
+            }, 200);
+          } else {
+            favoriteButton.querySelector("svg").setAttribute("fill", "none");
+          }
+        }
+      }
+
+      // 在更新卡片时也更新收藏按钮状态
+      const originalUpdateCards = updateCards;
+      updateCards = function () {
+        originalUpdateCards();
+        if (cardStack.length > 0) {
+          updateFavoriteButtonStyle(cardStack[0]);
+        }
+      };
 
       // 卡片点击事件 - 打开详情页
       const cards = document.querySelectorAll(".recommend-card");
@@ -1478,6 +1691,183 @@
 
           communityEventsBound = true;
         }
+      }
+
+      // 菜单名称映射
+      const menuNames = {
+        profile: "个人资料",
+        certification: "我的认证",
+        mypick: "我的pick",
+        pickedme: "谁pick了我",
+        favorites: "收藏夹",
+        preferences: "推荐偏好筛选",
+        partners: "我的搭子",
+        settings: "设置",
+        help: "帮助与反馈",
+      };
+
+      // 渲染收藏夹内容
+      function renderFavorites() {
+        const detailContent = document.querySelector(".profile-detail-content");
+        let html = "";
+
+        // 收集所有收藏的社区发布
+        const favoritePosts = communityPosts.filter((p) => p.isFavorited);
+        // 收集所有收藏的推荐人物
+        const favoritePersons = personDetailData.filter((p) => p.isFavorited);
+
+        if (favoritePosts.length === 0 && favoritePersons.length === 0) {
+          html = `
+            <div style="text-align: center; padding: 60px 0;">
+              <div style="font-size: 60px; margin-bottom: 20px;">📭</div>
+              <div style="font-size: 16px; color: #a3a1bf;">还没有收藏内容哦～</div>
+            </div>
+          `;
+        } else {
+          // 添加收藏的推荐人物
+          if (favoritePersons.length > 0) {
+            html += `<div style="font-size: 16px; font-weight: bold; color: #333; margin-bottom: 15px; margin-top: 10px;">推荐人物</div>`;
+            favoritePersons.forEach((person) => {
+              html += `
+                <div class="favorite-item" style="display: flex; align-items: center; padding: 12px; background: #fff; border-radius: 12px; margin-bottom: 12px;">
+                  <img src="${person.image}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 12px;">
+                  <div style="flex: 1;">
+                    <div style="font-size: 16px; font-weight: 500; color: #333; margin-bottom: 4px;">${person.name}</div>
+                    <div style="font-size: 13px; color: #666;">${person.basic}</div>
+                  </div>
+                  <button class="favorite-remove-btn" data-type="person" data-index="${person.index}" style="background: none; border: none; cursor: pointer; padding: 8px; border-radius: 50%; transition: all 0.2s;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </button>
+                </div>
+              `;
+            });
+          }
+
+          // 添加收藏的社区发布
+          if (favoritePosts.length > 0) {
+            html += `<div style="font-size: 16px; font-weight: bold; color: #333; margin-bottom: 15px; margin-top: 20px;">社区发布</div>`;
+            favoritePosts.forEach((post) => {
+              html += `
+                <div class="favorite-item" style="padding: 12px; background: #fff; border-radius: 12px; margin-bottom: 12px;">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <div style="display: flex; align-items: center;">
+                      <img src="${post.author.avatar}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; margin-right: 10px;">
+                      <div>
+                        <div style="font-size: 14px; font-weight: 500; color: #333;">${post.author.nickname}</div>
+                        <div style="font-size: 12px; color: #a3a1bf;">${post.club} · ${post.time}</div>
+                      </div>
+                    </div>
+                    <button class="favorite-remove-btn" data-type="post" data-id="${post.id}" style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 50%; transition: all 0.2s;">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </button>
+                  </div>
+                  <div style="font-size: 14px; color: #333; line-height: 1.5; margin-bottom: 8px;">${post.content}</div>
+                  <div style="display: flex; gap: 8px;">
+                    ${post.images
+                      .slice(0, 3)
+                      .map(
+                        (img, i) => `
+                      <img src="${img}" style="width: 70px; height: 70px; border-radius: 8px; object-fit: cover;">
+                    `,
+                      )
+                      .join("")}
+                  </div>
+                </div>
+              `;
+            });
+          }
+        }
+
+        detailContent.innerHTML = html;
+
+        // 绑定取消收藏按钮事件
+        document.querySelectorAll(".favorite-remove-btn").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const type = btn.dataset.type;
+            if (type === "person") {
+              const index = parseInt(btn.dataset.index);
+              const person = personDetailData.find((p) => p.index === index);
+              if (person) {
+                person.isFavorited = false;
+              }
+            } else if (type === "post") {
+              const id = parseInt(btn.dataset.id);
+              const post = communityPosts.find((p) => p.id === id);
+              if (post) {
+                post.isFavorited = false;
+                post.favorites--;
+                // 更新社区页面显示
+                updatePostStats(id);
+              }
+            }
+            // 重新渲染收藏夹
+            renderFavorites();
+          });
+        });
+      }
+
+      // 打开我的页面详情
+      function openProfileDetail(menuId) {
+        const title = menuNames[menuId] || "详情";
+        document.querySelector(".profile-detail-title").textContent = title;
+
+        const detailContent = document.querySelector(".profile-detail-content");
+
+        if (menuId === "favorites") {
+          renderFavorites();
+        } else {
+          detailContent.innerHTML = `
+            <div style="text-align: center; padding: 40px 0;">
+              <div style="font-size: 18px; color: #333; margin-bottom: 10px;">${title}</div>
+              <div style="font-size: 14px; color: #a3a1bf;">功能开发中...</div>
+            </div>
+          `;
+        }
+
+        document
+          .querySelector(".page-profile-detail-overlay")
+          .classList.add("active");
+        document
+          .querySelector(".page-profile-detail-page")
+          .classList.add("active");
+      }
+
+      // 关闭我的页面详情
+      function closeProfileDetail() {
+        document
+          .querySelector(".page-profile-detail-overlay")
+          .classList.remove("active");
+        document
+          .querySelector(".page-profile-detail-page")
+          .classList.remove("active");
+      }
+
+      // 初始化我的页面
+      function initProfilePage() {
+        // 绑定菜单项点击事件
+        document.querySelectorAll(".profile-menu-item").forEach((item) => {
+          item.addEventListener("click", () => {
+            const menuId = item.dataset.menu;
+            openProfileDetail(menuId);
+          });
+        });
+
+        // 绑定返回按钮点击事件
+        document
+          .querySelector(".profile-detail-back-button")
+          .addEventListener("click", closeProfileDetail);
+
+        // 绑定遮罩层点击事件
+        document
+          .querySelector(".page-profile-detail-overlay")
+          .addEventListener("click", closeProfileDetail);
       }
     </script>
   </body>

@@ -312,249 +312,59 @@
             </button>
             <button class="find-publish-button">发布</button>
           </div>
-          <div class="find-list-container">
-            <div class="find-card">
-              <div class="find-status-badge find-status-ongoing">进行中</div>
-              <div class="find-card-header">
-                <div class="find-avatar-container">
-                  <img class="find-avatar" src="person/boy1.jpg" alt="小明" />
-                </div>
-                <div class="find-card-info">
-                  <div class="find-card-title">小明的羽毛球局</div>
-                  <div class="find-card-tags">
-                    <span class="find-tag find-tag-sport">运动</span>
-                    <span class="find-tag find-tag-badminton">羽毛球</span>
-                  </div>
-                </div>
-              </div>
-              <div class="find-card-details">
-                <div class="find-detail-row">
-                  <div class="find-detail-item">
-                    <span class="find-detail-label">人数</span>
-                    <span class="find-detail-value">3/6</span>
-                  </div>
-                  <div class="find-detail-item">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-                      ></path>
-                      <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <span class="find-detail-text">仅限认证</span>
-                  </div>
-                </div>
-                <div class="find-detail-row">
-                  <div class="find-detail-item">
-                    <span class="find-detail-label">费用</span>
-                    <span class="find-detail-value">AA制</span>
-                  </div>
-                  <div class="find-detail-item">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    <span class="find-detail-text">2026.5.1 13:30 2h</span>
-                  </div>
-                </div>
-              </div>
-              <div class="find-card-divider"></div>
-              <div class="find-card-footer">
-                <div class="find-card-location">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                    ></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                  <span>城市运动中心羽毛球馆</span>
-                </div>
-                <button class="find-join-button">报名</button>
+          <!-- 搜索框 -->
+          <div class="find-search-container">
+            <div class="find-search-input-wrapper">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+              <input
+                type="text"
+                class="find-search-input"
+                placeholder="搜索活动..."
+              />
+              <button class="find-search-close">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <!-- 快捷搜索选项 -->
+            <div class="find-quick-search">
+              <div class="quick-search-title">热门类型</div>
+              <div class="quick-search-tags">
+                <span class="quick-search-tag" data-type="sport">运动</span>
+                <span class="quick-search-tag" data-type="social">社交</span>
+                <span class="quick-search-tag" data-type="study">学习</span>
+                <span class="quick-search-tag" data-type="dinner">饭局</span>
               </div>
             </div>
-
-            <div class="find-card">
-              <div class="find-status-badge find-status-upcoming">即将截止</div>
-              <div class="find-card-header">
-                <div class="find-avatar-container">
-                  <img class="find-avatar" src="person/girl1.jpg" alt="小红" />
-                </div>
-                <div class="find-card-info">
-                  <div class="find-card-title">小红的骑行计划</div>
-                  <div class="find-card-tags">
-                    <span class="find-tag find-tag-sport">运动</span>
-                    <span class="find-tag find-tag-cycling">骑行</span>
-                  </div>
-                </div>
-              </div>
-              <div class="find-card-details">
-                <div class="find-detail-row">
-                  <div class="find-detail-item">
-                    <span class="find-detail-label">人数</span>
-                    <span class="find-detail-value">5/8</span>
-                  </div>
-                  <div class="find-detail-item">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-                      ></path>
-                      <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <span class="find-detail-text">任何人</span>
-                  </div>
-                </div>
-                <div class="find-detail-row">
-                  <div class="find-detail-item">
-                    <span class="find-detail-label">费用</span>
-                    <span class="find-detail-value">自费</span>
-                  </div>
-                  <div class="find-detail-item">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    <span class="find-detail-text">2026.5.2 08:00 4h</span>
-                  </div>
-                </div>
-              </div>
-              <div class="find-card-divider"></div>
-              <div class="find-card-footer">
-                <div class="find-card-location">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                    ></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                  <span>城市绿道起点</span>
-                </div>
-                <button class="find-join-button">报名</button>
-              </div>
-            </div>
-
-            <div class="find-card">
-              <div class="find-status-badge find-status-ended">已结束</div>
-              <div class="find-card-header">
-                <div class="find-avatar-container">
-                  <img class="find-avatar" src="person/girl2.jpg" alt="小张" />
-                </div>
-                <div class="find-card-info">
-                  <div class="find-card-title">小张的剧本杀局</div>
-                  <div class="find-card-tags">
-                    <span class="find-tag find-tag-social">社交</span>
-                    <span class="find-tag find-tag-script">剧本杀</span>
-                  </div>
-                </div>
-              </div>
-              <div class="find-card-details">
-                <div class="find-detail-row">
-                  <div class="find-detail-item">
-                    <span class="find-detail-label">人数</span>
-                    <span class="find-detail-value">6/6</span>
-                  </div>
-                  <div class="find-detail-item">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-                      ></path>
-                      <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <span class="find-detail-text">任何人</span>
-                  </div>
-                </div>
-                <div class="find-detail-row">
-                  <div class="find-detail-item">
-                    <span class="find-detail-label">费用</span>
-                    <span class="find-detail-value">AA制</span>
-                  </div>
-                  <div class="find-detail-item">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    <span class="find-detail-text">2026.4.30 19:00 5h</span>
-                  </div>
-                </div>
-              </div>
-              <div class="find-card-divider"></div>
-              <div class="find-card-footer">
-                <div class="find-card-location">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                    ></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                  <span>神秘剧本杀探案馆</span>
-                </div>
-                <button class="find-join-button find-join-button-disabled">
-                  已结束
-                </button>
-              </div>
-            </div>
+            <!-- 搜索结果列表 -->
+            <div class="find-search-results"></div>
           </div>
+          <div class="find-list-container"></div>
+        </div>
+        <!-- 觅伴活动详情弹窗遮罩 -->
+        <div class="find-detail-overlay"></div>
+        <!-- 觅伴活动详情弹窗 -->
+        <div class="find-detail-page">
+          <div class="find-detail-content"></div>
         </div>
         <!-- 我的页面 -->
         <div class="page page-profile" data-page="profile">
@@ -2136,11 +1946,601 @@
           .addEventListener("click", closeProfileDetail);
       }
 
+      // 觅伴活动数据
+      const findActivities = [
+        {
+          id: 1,
+          author: {
+            nickname: "小明",
+            avatar: "person/boy1.jpg",
+          },
+          title: "小明的羽毛球局",
+          tags: [
+            { name: "运动", type: "sport" },
+            { name: "羽毛球", type: "badminton" },
+          ],
+          people: {
+            current: 3,
+            total: 6,
+          },
+          authRequired: "仅限认证",
+          cost: "AA制",
+          time: "2026.5.1 13:30 2h",
+          location: "城市运动中心羽毛球馆",
+          status: "ongoing",
+          isJoined: false,
+        },
+        {
+          id: 2,
+          author: {
+            nickname: "小红",
+            avatar: "person/girl1.jpg",
+          },
+          title: "小红的骑行计划",
+          tags: [
+            { name: "运动", type: "sport" },
+            { name: "骑行", type: "cycling" },
+          ],
+          people: {
+            current: 5,
+            total: 8,
+          },
+          authRequired: "任何人",
+          cost: "自费",
+          time: "2026.5.2 08:00 4h",
+          location: "城市绿道起点",
+          status: "upcoming",
+          isJoined: false,
+        },
+        {
+          id: 3,
+          author: {
+            nickname: "小张",
+            avatar: "person/girl2.jpg",
+          },
+          title: "小张的剧本杀局",
+          tags: [
+            { name: "社交", type: "social" },
+            { name: "剧本杀", type: "script" },
+          ],
+          people: {
+            current: 6,
+            total: 6,
+          },
+          authRequired: "任何人",
+          cost: "AA制",
+          time: "2026.4.30 19:00 5h",
+          location: "神秘剧本杀探案馆",
+          status: "ended",
+          isJoined: false,
+        },
+        {
+          id: 4,
+          author: {
+            nickname: "小李",
+            avatar: "person/boy2.jpg",
+          },
+          title: "小李的读书会",
+          tags: [
+            { name: "学习", type: "study" },
+            { name: "读书", type: "reading" },
+          ],
+          people: {
+            current: 2,
+            total: 4,
+          },
+          authRequired: "仅限认证",
+          cost: "免费",
+          time: "2026.5.3 14:00 3h",
+          location: "城市图书馆",
+          status: "ongoing",
+          isJoined: false,
+        },
+        {
+          id: 5,
+          author: {
+            nickname: "小王",
+            avatar: "person/boy3.jpg",
+          },
+          title: "小王的约跑步",
+          tags: [
+            { name: "运动", type: "sport" },
+            { name: "跑步", type: "running" },
+          ],
+          people: {
+            current: 4,
+            total: 6,
+          },
+          authRequired: "任何人",
+          cost: "自费",
+          time: "2026.5.4 07:00 1.5h",
+          location: "滨江公园跑道",
+          status: "upcoming",
+          isJoined: false,
+        },
+        {
+          id: 6,
+          author: {
+            nickname: "小赵",
+            avatar: "person/girl3.jpg",
+          },
+          title: "小赵的美食聚会",
+          tags: [
+            { name: "社交", type: "social" },
+            { name: "饭局", type: "dinner" },
+          ],
+          people: {
+            current: 3,
+            total: 5,
+          },
+          authRequired: "任何人",
+          cost: "AA制",
+          time: "2026.5.5 18:30 3h",
+          location: "老成都火锅店",
+          status: "ongoing",
+          isJoined: false,
+        },
+      ];
+
+      // 渲染觅伴活动列表
+      function renderFindList(activities = findActivities) {
+        const listContainer = document.querySelector(".find-list-container");
+        listContainer.innerHTML = "";
+
+        activities.forEach((activity) => {
+          const card = document.createElement("div");
+          card.className = "find-card";
+          card.dataset.id = activity.id;
+
+          let statusClass = "";
+          let statusText = "";
+          if (activity.isJoined) {
+            statusClass = "find-status-joined";
+            statusText = "已报名";
+          } else {
+            switch (activity.status) {
+              case "ongoing":
+                statusClass = "find-status-ongoing";
+                statusText = "进行中";
+                break;
+              case "upcoming":
+                statusClass = "find-status-upcoming";
+                statusText = "即将截止";
+                break;
+              case "ended":
+                statusClass = "find-status-ended";
+                statusText = "已结束";
+                break;
+            }
+          }
+
+          let buttonClass = "find-join-button";
+          let buttonText = "报名";
+          if (activity.isJoined) {
+            buttonClass = "find-cancel-button";
+            buttonText = "取消";
+          } else if (activity.status === "ended") {
+            buttonClass = "find-join-button find-join-button-disabled";
+            buttonText = "已结束";
+          }
+
+          const tagsHtml = activity.tags
+            .map(
+              (tag) =>
+                `<span class="find-tag find-tag-${tag.type}">${tag.name}</span>`,
+            )
+            .join("");
+
+          card.innerHTML = `
+                    <div class="find-status-badge ${statusClass}">${statusText}</div>
+                    <div class="find-card-header">
+                        <div class="find-avatar-container">
+                            <img class="find-avatar" src="${activity.author.avatar}" alt="${activity.author.nickname}">
+                        </div>
+                        <div class="find-card-info">
+                            <div class="find-card-title">${activity.title}</div>
+                            <div class="find-card-tags">${tagsHtml}</div>
+                        </div>
+                    </div>
+                    <div class="find-card-details">
+                        <div class="find-detail-row">
+                            <div class="find-detail-item">
+                                <span class="find-detail-label">人数</span>
+                                <span class="find-detail-value">${activity.people.current}/${activity.people.total}</span>
+                            </div>
+                            <div class="find-detail-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <span class="find-detail-text">${activity.authRequired}</span>
+                            </div>
+                        </div>
+                        <div class="find-detail-row">
+                            <div class="find-detail-item">
+                                <span class="find-detail-label">费用</span>
+                                <span class="find-detail-value">${activity.cost}</span>
+                            </div>
+                            <div class="find-detail-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span class="find-detail-text">${activity.time}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="find-card-divider"></div>
+                    <div class="find-card-footer">
+                        <div class="find-card-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>${activity.location}</span>
+                        </div>
+                        <button class="${buttonClass}" data-action="${activity.isJoined ? "cancel" : "join"}" data-id="${activity.id}">${buttonText}</button>
+                    </div>
+                `;
+
+          listContainer.appendChild(card);
+        });
+
+        // 绑定报名/取消按钮事件
+        document
+          .querySelectorAll(".find-join-button, .find-cancel-button")
+          .forEach((btn) => {
+            if (!btn.classList.contains("find-join-button-disabled")) {
+              btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const id = parseInt(btn.dataset.id);
+                const action = btn.dataset.action;
+                openFindDetail(id, action);
+              });
+            }
+          });
+      }
+
+      // 打开觅伴活动详情弹窗
+      function openFindDetail(activityId, action) {
+        const activity = findActivities.find((a) => a.id === activityId);
+        if (!activity) return;
+
+        const detailContent = document.querySelector(".find-detail-content");
+        const tagsHtml = activity.tags
+          .map(
+            (tag) =>
+              `<span class="find-tag find-tag-${tag.type}">${tag.name}</span>`,
+          )
+          .join("");
+
+        let actionTitle = "";
+        let confirmText = "";
+        if (action === "join") {
+          actionTitle = "确认报名";
+          confirmText = "确认参加这个活动吗？";
+        } else {
+          actionTitle = "确认取消";
+          confirmText = "确定要取消报名吗？";
+        }
+
+        detailContent.innerHTML = `
+                    <div class="find-detail-card">
+                        <div class="find-detail-header">
+                            <div class="find-detail-avatar-container">
+                                <img class="find-detail-avatar" src="${activity.author.avatar}" alt="${activity.author.nickname}">
+                            </div>
+                            <div class="find-detail-info">
+                                <div class="find-detail-title">${activity.title}</div>
+                                <div class="find-detail-tags">${tagsHtml}</div>
+                            </div>
+                            <button class="find-detail-close">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="find-detail-requirements">
+                            <div class="requirement-item">
+                                <span class="requirement-label">发起人</span>
+                                <span class="requirement-value">${activity.author.nickname}</span>
+                            </div>
+                            <div class="requirement-item">
+                                <span class="requirement-label">人数</span>
+                                <span class="requirement-value">${activity.people.current}/${activity.people.total}</span>
+                            </div>
+                            <div class="requirement-item">
+                                <span class="requirement-label">认证要求</span>
+                                <span class="requirement-value">${activity.authRequired}</span>
+                            </div>
+                            <div class="requirement-item">
+                                <span class="requirement-label">费用</span>
+                                <span class="requirement-value">${activity.cost}</span>
+                            </div>
+                            <div class="requirement-item">
+                                <span class="requirement-label">时间</span>
+                                <span class="requirement-value">${activity.time}</span>
+                            </div>
+                            <div class="requirement-item">
+                                <span class="requirement-label">地点</span>
+                                <span class="requirement-value">${activity.location}</span>
+                            </div>
+                        </div>
+                        <div class="find-detail-action">
+                            <div class="find-detail-action-title">${actionTitle}</div>
+                            <div class="find-detail-action-text">${confirmText}</div>
+                            <div class="find-detail-buttons">
+                                <button class="find-detail-cancel-btn">取消</button>
+                                <button class="find-detail-confirm-btn" data-action="${action}" data-id="${activity.id}">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+        document.querySelector(".find-detail-overlay").classList.add("active");
+        document.querySelector(".find-detail-page").classList.add("active");
+
+        // 绑定关闭按钮事件
+        document
+          .querySelector(".find-detail-close")
+          .addEventListener("click", closeFindDetail);
+        document
+          .querySelector(".find-detail-overlay")
+          .addEventListener("click", closeFindDetail);
+        document
+          .querySelector(".find-detail-cancel-btn")
+          .addEventListener("click", closeFindDetail);
+
+        // 绑定确认按钮事件
+        document
+          .querySelector(".find-detail-confirm-btn")
+          .addEventListener("click", (e) => {
+            const id = parseInt(e.target.dataset.id);
+            const action = e.target.dataset.action;
+            if (action === "join") {
+              joinActivity(id);
+            } else {
+              cancelActivity(id);
+            }
+            closeFindDetail();
+          });
+      }
+
+      // 关闭觅伴活动详情弹窗
+      function closeFindDetail() {
+        document
+          .querySelector(".find-detail-overlay")
+          .classList.remove("active");
+        document.querySelector(".find-detail-page").classList.remove("active");
+      }
+
+      // 报名活动
+      function joinActivity(activityId) {
+        const activity = findActivities.find((a) => a.id === activityId);
+        if (activity) {
+          activity.isJoined = true;
+          renderFindList();
+        }
+      }
+
+      // 取消报名
+      function cancelActivity(activityId) {
+        const activity = findActivities.find((a) => a.id === activityId);
+        if (activity) {
+          activity.isJoined = false;
+          renderFindList();
+        }
+      }
+
+      // 打开搜索框
+      function openFindSearch() {
+        document
+          .querySelector(".find-search-container")
+          .classList.add("active");
+        document.querySelector(".find-search-input").focus();
+        renderQuickSearch();
+      }
+
+      // 关闭搜索框
+      function closeFindSearch() {
+        document
+          .querySelector(".find-search-container")
+          .classList.remove("active");
+        document.querySelector(".find-search-input").value = "";
+        document.querySelector(".find-search-results").innerHTML = "";
+      }
+
+      // 渲染快捷搜索
+      function renderQuickSearch() {
+        const quickSearch = document.querySelector(".find-quick-search");
+        quickSearch.style.display = "block";
+        document.querySelector(".find-search-results").style.display = "none";
+      }
+
+      // 搜索活动
+      function searchActivities(keyword) {
+        if (!keyword.trim()) {
+          renderQuickSearch();
+          return;
+        }
+
+        document.querySelector(".find-quick-search").style.display = "none";
+        const resultsContainer = document.querySelector(".find-search-results");
+        resultsContainer.style.display = "block";
+
+        const filtered = findActivities.filter(
+          (activity) =>
+            activity.title.toLowerCase().includes(keyword.toLowerCase()) ||
+            activity.tags.some((tag) =>
+              tag.name.toLowerCase().includes(keyword.toLowerCase()),
+            ),
+        );
+
+        if (filtered.length === 0) {
+          resultsContainer.innerHTML = `
+                    <div class="find-no-results">
+                        <div class="no-results-icon">🔍</div>
+                        <div class="no-results-text">未找到相关活动</div>
+                    </div>
+                `;
+        } else {
+          resultsContainer.innerHTML = filtered
+            .map(
+              (activity) => `
+                        <div class="find-search-result-item" data-id="${activity.id}">
+                            <div class="result-item-title">${activity.title}</div>
+                            <div class="result-item-tags">
+                                ${activity.tags.map((tag) => `<span class="result-tag">${tag.name}</span>`).join("")}
+                            </div>
+                            <div class="result-item-info">${activity.location} · ${activity.time}</div>
+                        </div>
+                    `,
+            )
+            .join("");
+
+          // 绑定搜索结果点击事件
+          document
+            .querySelectorAll(".find-search-result-item")
+            .forEach((item) => {
+              item.addEventListener("click", () => {
+                const id = parseInt(item.dataset.id);
+                closeFindSearch();
+                const card = document.querySelector(
+                  `.find-card[data-id="${id}"]`,
+                );
+                if (card) {
+                  card.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+              });
+            });
+        }
+      }
+
+      // 快捷搜索按类型筛选
+      function quickSearchByType(type) {
+        closeFindSearch();
+        const filtered = findActivities.filter((activity) =>
+          activity.tags.some((tag) => tag.type === type),
+        );
+        renderFindList(filtered);
+      }
+
+      // 渲染我的搭子页面
+      function renderMyPartners() {
+        const detailContent = document.querySelector(".profile-detail-content");
+        const joinedActivities = findActivities.filter((a) => a.isJoined);
+
+        if (joinedActivities.length === 0) {
+          detailContent.innerHTML = `
+                    <div style="text-align: center; padding: 60px 0;">
+                        <div style="font-size: 60px; margin-bottom: 20px;">🤝</div>
+                        <div style="font-size: 16px; color: #a3a1bf;">还没有加入任何活动哦～</div>
+                    </div>
+                `;
+        } else {
+          let html = "";
+          joinedActivities.forEach((activity) => {
+            const tagsHtml = activity.tags
+              .map(
+                (tag) =>
+                  `<span class="find-tag find-tag-${tag.type}">${tag.name}</span>`,
+              )
+              .join("");
+
+            html += `
+                        <div class="find-card" style="margin-bottom: 15px;">
+                            <div class="find-status-badge find-status-joined">已报名</div>
+                            <div class="find-card-header">
+                                <div class="find-avatar-container">
+                                    <img class="find-avatar" src="${activity.author.avatar}" alt="${activity.author.nickname}">
+                                </div>
+                                <div class="find-card-info">
+                                    <div class="find-card-title">${activity.title}</div>
+                                    <div class="find-card-tags">${tagsHtml}</div>
+                                </div>
+                            </div>
+                            <div class="find-card-details">
+                                <div class="find-detail-row">
+                                    <div class="find-detail-item">
+                                        <span class="find-detail-label">人数</span>
+                                        <span class="find-detail-value">${activity.people.current}/${activity.people.total}</span>
+                                    </div>
+                                    <div class="find-detail-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        <span class="find-detail-text">${activity.authRequired}</span>
+                                    </div>
+                                </div>
+                                <div class="find-detail-row">
+                                    <div class="find-detail-item">
+                                        <span class="find-detail-label">费用</span>
+                                        <span class="find-detail-value">${activity.cost}</span>
+                                    </div>
+                                    <div class="find-detail-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12 6 12 12 16 14"></polyline>
+                                        </svg>
+                                        <span class="find-detail-text">${activity.time}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="find-card-divider"></div>
+                            <div class="find-card-footer">
+                                <div class="find-card-location">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    <span>${activity.location}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+          });
+          detailContent.innerHTML = html;
+        }
+      }
+
+      // 修改openProfileDetail函数，支持我的搭子页面
+      const originalOpenProfileDetail = openProfileDetail;
+      openProfileDetail = function (menuId) {
+        const title = menuNames[menuId] || "详情";
+        document.querySelector(".profile-detail-title").textContent = title;
+
+        const detailContent = document.querySelector(".profile-detail-content");
+
+        if (menuId === "favorites") {
+          renderFavorites();
+        } else if (menuId === "partners") {
+          renderMyPartners();
+        } else {
+          detailContent.innerHTML = `
+                    <div style="text-align: center; padding: 40px 0;">
+                        <div style="font-size: 18px; color: #333; margin-bottom: 10px;">${title}</div>
+                        <div style="font-size: 14px; color: #a3a1bf;">功能开发中...</div>
+                    </div>
+                `;
+        }
+
+        document
+          .querySelector(".page-profile-detail-overlay")
+          .classList.add("active");
+        document
+          .querySelector(".page-profile-detail-page")
+          .classList.add("active");
+      };
+
       // 觅伴页面事件是否已绑定
       let findEventsBound = false;
 
       // 初始化觅伴页面
       function initFindPage() {
+        renderFindList();
+
         if (findEventsBound) return;
 
         // 绑定标签点击事件
@@ -2150,6 +2550,31 @@
               .querySelectorAll(".find-tab")
               .forEach((t) => t.classList.remove("active"));
             tab.classList.add("active");
+          });
+        });
+
+        // 绑定搜索按钮点击事件
+        document
+          .querySelector(".find-search-button")
+          .addEventListener("click", openFindSearch);
+
+        // 绑定搜索框关闭按钮事件
+        document
+          .querySelector(".find-search-close")
+          .addEventListener("click", closeFindSearch);
+
+        // 绑定搜索框输入事件
+        document
+          .querySelector(".find-search-input")
+          .addEventListener("input", (e) => {
+            searchActivities(e.target.value);
+          });
+
+        // 绑定快捷搜索标签点击事件
+        document.querySelectorAll(".quick-search-tag").forEach((tag) => {
+          tag.addEventListener("click", () => {
+            const type = tag.dataset.type;
+            quickSearchByType(type);
           });
         });
 

@@ -291,7 +291,271 @@
         </div>
 
         <!-- 觅伴页面 -->
-        <div class="page page-find" data-page="find"></div>
+        <div class="page page-find" data-page="find">
+          <div class="find-tabs">
+            <div class="find-tab active" data-tab="discover">发现</div>
+            <div class="find-tab" data-tab="nearby">附近</div>
+          </div>
+          <div class="find-header-buttons">
+            <button class="find-search-button">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </button>
+            <button class="find-publish-button">发布</button>
+          </div>
+          <div class="find-list-container">
+            <div class="find-card">
+              <div class="find-status-badge find-status-ongoing">进行中</div>
+              <div class="find-card-header">
+                <div class="find-avatar-container">
+                  <img class="find-avatar" src="person/boy1.jpg" alt="小明" />
+                </div>
+                <div class="find-card-info">
+                  <div class="find-card-title">小明的羽毛球局</div>
+                  <div class="find-card-tags">
+                    <span class="find-tag find-tag-sport">运动</span>
+                    <span class="find-tag find-tag-badminton">羽毛球</span>
+                  </div>
+                </div>
+              </div>
+              <div class="find-card-details">
+                <div class="find-detail-row">
+                  <div class="find-detail-item">
+                    <span class="find-detail-label">人数</span>
+                    <span class="find-detail-value">3/6</span>
+                  </div>
+                  <div class="find-detail-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                      ></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="find-detail-text">仅限认证</span>
+                  </div>
+                </div>
+                <div class="find-detail-row">
+                  <div class="find-detail-item">
+                    <span class="find-detail-label">费用</span>
+                    <span class="find-detail-value">AA制</span>
+                  </div>
+                  <div class="find-detail-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span class="find-detail-text">2026.5.1 13:30 2h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="find-card-divider"></div>
+              <div class="find-card-footer">
+                <div class="find-card-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>城市运动中心羽毛球馆</span>
+                </div>
+                <button class="find-join-button">报名</button>
+              </div>
+            </div>
+
+            <div class="find-card">
+              <div class="find-status-badge find-status-upcoming">即将截止</div>
+              <div class="find-card-header">
+                <div class="find-avatar-container">
+                  <img class="find-avatar" src="person/girl1.jpg" alt="小红" />
+                </div>
+                <div class="find-card-info">
+                  <div class="find-card-title">小红的骑行计划</div>
+                  <div class="find-card-tags">
+                    <span class="find-tag find-tag-sport">运动</span>
+                    <span class="find-tag find-tag-cycling">骑行</span>
+                  </div>
+                </div>
+              </div>
+              <div class="find-card-details">
+                <div class="find-detail-row">
+                  <div class="find-detail-item">
+                    <span class="find-detail-label">人数</span>
+                    <span class="find-detail-value">5/8</span>
+                  </div>
+                  <div class="find-detail-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                      ></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="find-detail-text">任何人</span>
+                  </div>
+                </div>
+                <div class="find-detail-row">
+                  <div class="find-detail-item">
+                    <span class="find-detail-label">费用</span>
+                    <span class="find-detail-value">自费</span>
+                  </div>
+                  <div class="find-detail-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span class="find-detail-text">2026.5.2 08:00 4h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="find-card-divider"></div>
+              <div class="find-card-footer">
+                <div class="find-card-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>城市绿道起点</span>
+                </div>
+                <button class="find-join-button">报名</button>
+              </div>
+            </div>
+
+            <div class="find-card">
+              <div class="find-status-badge find-status-ended">已结束</div>
+              <div class="find-card-header">
+                <div class="find-avatar-container">
+                  <img class="find-avatar" src="person/girl2.jpg" alt="小张" />
+                </div>
+                <div class="find-card-info">
+                  <div class="find-card-title">小张的剧本杀局</div>
+                  <div class="find-card-tags">
+                    <span class="find-tag find-tag-social">社交</span>
+                    <span class="find-tag find-tag-script">剧本杀</span>
+                  </div>
+                </div>
+              </div>
+              <div class="find-card-details">
+                <div class="find-detail-row">
+                  <div class="find-detail-item">
+                    <span class="find-detail-label">人数</span>
+                    <span class="find-detail-value">6/6</span>
+                  </div>
+                  <div class="find-detail-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                      ></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="find-detail-text">任何人</span>
+                  </div>
+                </div>
+                <div class="find-detail-row">
+                  <div class="find-detail-item">
+                    <span class="find-detail-label">费用</span>
+                    <span class="find-detail-value">AA制</span>
+                  </div>
+                  <div class="find-detail-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span class="find-detail-text">2026.4.30 19:00 5h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="find-card-divider"></div>
+              <div class="find-card-footer">
+                <div class="find-card-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>神秘剧本杀探案馆</span>
+                </div>
+                <button class="find-join-button find-join-button-disabled">
+                  已结束
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- 我的页面 -->
         <div class="page page-profile" data-page="profile">
           <div class="profile-header-container">
@@ -947,6 +1211,8 @@
           initCommunityPage();
         } else if (targetTab === "profile") {
           initProfilePage();
+        } else if (targetTab === "find") {
+          initFindPage();
         }
       }
 
@@ -1868,6 +2134,26 @@
         document
           .querySelector(".page-profile-detail-overlay")
           .addEventListener("click", closeProfileDetail);
+      }
+
+      // 觅伴页面事件是否已绑定
+      let findEventsBound = false;
+
+      // 初始化觅伴页面
+      function initFindPage() {
+        if (findEventsBound) return;
+
+        // 绑定标签点击事件
+        document.querySelectorAll(".find-tab").forEach((tab) => {
+          tab.addEventListener("click", () => {
+            document
+              .querySelectorAll(".find-tab")
+              .forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+          });
+        });
+
+        findEventsBound = true;
       }
     </script>
   </body>

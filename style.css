@@ -1537,3 +1537,334 @@ body {
   color: #666666;
   line-height: 1.8;
 }
+
+/* 觅伴页面标签栏 */
+.find-tabs {
+  position: absolute;
+  top: 54px;
+  left: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 40px;
+  z-index: 10;
+  width: 200px;
+}
+
+.find-tab {
+  font-size: 20px;
+  font-weight: 500;
+  color: #a3a1bf;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  line-height: 1.2;
+  display: flex;
+  align-items: flex-end;
+  height: 40px;
+}
+
+.find-tab.active {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* 觅伴页面头部按钮 */
+.find-header-buttons {
+  position: absolute;
+  top: 54px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+/* 搜索按钮 */
+.find-search-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.find-search-button:hover {
+  transform: scale(1.05);
+}
+
+.find-search-button svg {
+  width: 20px;
+  height: 20px;
+  color: #333333;
+}
+
+/* 发布按钮 */
+.find-publish-button {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 22px;
+  background: linear-gradient(90deg, #3999ed 0%, #2678c9 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.find-publish-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(57, 153, 237, 0.4);
+}
+
+/* 觅伴列表容器 */
+.find-list-container {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  padding: 15px;
+  padding-bottom: 140px;
+}
+
+/* 觅伴卡片 */
+.find-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 状态标签 */
+.find-status-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  z-index: 5;
+}
+
+.find-status-ongoing {
+  background-color: #34c759;
+}
+
+.find-status-upcoming {
+  background-color: #ff9500;
+}
+
+.find-status-ended {
+  background-color: #ff3b30;
+}
+
+/* 卡片头部 */
+.find-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.find-avatar-container {
+  margin-right: 12px;
+}
+
+.find-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.find-card-info {
+  flex: 1;
+}
+
+.find-card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+.find-card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* 标签样式 */
+.find-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 运动类标签 */
+.find-tag-sport {
+  background-color: rgba(57, 153, 237, 0.15);
+  color: #2678c9;
+}
+
+.find-tag-badminton,
+.find-tag-cycling,
+.find-tag-running {
+  background-color: rgba(57, 153, 237, 0.1);
+  color: #3999ed;
+}
+
+/* 社交类标签 */
+.find-tag-social {
+  background-color: rgba(255, 149, 0, 0.15);
+  color: #e68600;
+}
+
+.find-tag-script,
+.find-tag-dinner {
+  background-color: rgba(255, 149, 0, 0.1);
+  color: #ff9500;
+}
+
+/* 学习类标签 */
+.find-tag-study {
+  background-color: rgba(52, 199, 89, 0.15);
+  color: #28a745;
+}
+
+.find-tag-reading {
+  background-color: rgba(52, 199, 89, 0.1);
+  color: #34c759;
+}
+
+/* 卡片详情 */
+.find-card-details {
+  margin-bottom: 12px;
+}
+
+.find-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.find-detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.find-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.find-detail-label {
+  font-size: 13px;
+  color: #a3a1bf;
+}
+
+.find-detail-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.find-detail-item svg {
+  width: 16px;
+  height: 16px;
+  color: #a3a1bf;
+}
+
+.find-detail-text {
+  font-size: 13px;
+  color: #666666;
+}
+
+/* 分隔线 */
+.find-card-divider {
+  height: 1px;
+  background-color: #f0f0f0;
+  margin-bottom: 12px;
+}
+
+/* 卡片底部 */
+.find-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.find-card-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  margin-right: 12px;
+}
+
+.find-card-location svg {
+  width: 16px;
+  height: 16px;
+  color: #a3a1bf;
+  flex-shrink: 0;
+}
+
+.find-card-location span {
+  font-size: 13px;
+  color: #666666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 报名按钮 */
+.find-join-button {
+  height: 36px;
+  padding: 0 20px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #3999ed 0%, #2678c9 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.find-join-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(57, 153, 237, 0.4);
+}
+
+.find-join-button-disabled {
+  background-color: #a3a1bf;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.find-join-button-disabled:hover {
+  transform: none;
+  box-shadow: none;
+}

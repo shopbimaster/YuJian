@@ -366,6 +366,249 @@
         <div class="find-detail-page">
           <div class="find-detail-content"></div>
         </div>
+        <!-- 发布活动页面 -->
+        <div class="page page-publish" data-page="publish">
+          <div class="publish-header">
+            <button class="publish-back-button">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="publish-title">发布</div>
+            <div class="publish-header-right"></div>
+          </div>
+          <div class="publish-content">
+            <!-- 所属圈子 -->
+            <div class="publish-section">
+              <div class="publish-section-title">所属圈子</div>
+              <div class="publish-club-select">
+                <select class="publish-select">
+                  <option value="">请选择</option>
+                  <option value="sport">运动圈</option>
+                  <option value="social">社交圈</option>
+                  <option value="study">学习圈</option>
+                </select>
+                <button class="publish-add-club">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                  <span>添加</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 基本信息 -->
+            <div class="publish-section">
+              <div class="publish-section-title">基本信息</div>
+              <div class="publish-form-item">
+                <div class="publish-form-label">
+                  <span class="required">*</span>活动地点
+                </div>
+                <div class="publish-form-value">
+                  <input
+                    type="text"
+                    class="publish-input"
+                    placeholder="请输入活动地点"
+                  />
+                </div>
+              </div>
+              <div class="publish-form-hint">精准到校内具体位置或周边地点</div>
+
+              <div class="publish-form-item">
+                <div class="publish-form-label">
+                  <span class="required">*</span>活动时间
+                </div>
+                <div class="publish-form-value">
+                  <input
+                    type="text"
+                    class="publish-input"
+                    placeholder="请输入活动时间"
+                  />
+                </div>
+              </div>
+
+              <div class="publish-form-item">
+                <div class="publish-form-label">
+                  <span class="required">*</span>人数限制
+                </div>
+                <div class="publish-form-value">
+                  <select class="publish-select">
+                    <option value="">请选择人数</option>
+                    <option value="2">2人</option>
+                    <option value="4">4人</option>
+                    <option value="6">6人</option>
+                    <option value="8">8人</option>
+                    <option value="10">10人</option>
+                    <option value="unlimited">不限</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="publish-form-item">
+                <div class="publish-form-label">
+                  <span class="required">*</span>费用说明
+                </div>
+                <div class="publish-form-value">
+                  <select class="publish-select">
+                    <option value="">请选择</option>
+                    <option value="aa">AA制</option>
+                    <option value="self">自费</option>
+                    <option value="free">免费</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- 报名条件 -->
+            <div class="publish-section">
+              <div class="publish-section-title">报名条件</div>
+              <div class="publish-form-item">
+                <div class="publish-form-label">是否仅限认证用户</div>
+                <div class="publish-form-value">
+                  <select class="publish-select">
+                    <option value="">请选择</option>
+                    <option value="yes">是</option>
+                    <option value="no">否</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="publish-form-item">
+                <div class="publish-form-label">是否特定专业或年级</div>
+                <div class="publish-form-value">
+                  <input
+                    type="text"
+                    class="publish-input"
+                    placeholder="请输入"
+                  />
+                </div>
+              </div>
+
+              <div class="publish-form-item">
+                <div class="publish-form-label">名称</div>
+                <div class="publish-form-value">
+                  <input
+                    type="text"
+                    class="publish-input"
+                    placeholder="广场列表显示"
+                  />
+                </div>
+              </div>
+
+              <div class="publish-form-item">
+                <div class="publish-form-value full-width">
+                  <textarea
+                    class="publish-textarea"
+                    placeholder="请输入其他要求"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- 位置 -->
+            <div class="publish-section">
+              <div class="publish-section-title">位置</div>
+              <div class="publish-upload-item">
+                <div class="publish-upload-label">活动地点图片</div>
+                <div class="publish-upload-box">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="3"
+                      y="3"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                  </svg>
+                  <div class="publish-upload-text">上传/拍照</div>
+                </div>
+              </div>
+
+              <div class="publish-upload-item">
+                <div class="publish-upload-label">路线指引</div>
+                <div class="publish-upload-box">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="3"
+                      y="3"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                  </svg>
+                  <div class="publish-upload-text">上传/拍照</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 参与者应提供信息 -->
+            <div class="publish-section">
+              <div class="publish-section-title">参与者应提供信息</div>
+              <div class="publish-check-item">
+                <input
+                  type="checkbox"
+                  id="check-wechat"
+                  class="publish-checkbox"
+                />
+                <label for="check-wechat" class="publish-check-label"
+                  >微信</label
+                >
+              </div>
+              <div class="publish-check-item">
+                <input
+                  type="checkbox"
+                  id="check-phone"
+                  class="publish-checkbox"
+                  checked
+                />
+                <label for="check-phone" class="publish-check-label"
+                  >电话</label
+                >
+              </div>
+            </div>
+
+            <!-- 发布按钮 -->
+            <div class="publish-footer">
+              <button class="publish-submit-button">发布</button>
+            </div>
+          </div>
+        </div>
         <!-- 我的页面 -->
         <div class="page page-profile" data-page="profile">
           <div class="profile-header-container">
@@ -785,6 +1028,9 @@
       // 五个tab页面的顺序
       const tabOrder = ["recommend", "community", "message", "find", "profile"];
 
+      // 上一个主tab页面
+      let previousMainTab = "find";
+
       // 按最后消息时间排序好友
       function sortFriendsByTime(friends) {
         return [...friends].sort((a, b) => {
@@ -975,6 +1221,68 @@
         renderChatList(mockFriends);
       }
 
+      // 打开发布页面
+      function openPublishPage() {
+        previousMainTab = currentTab;
+        currentTab = "publish";
+
+        // 隐藏所有其他页面
+        tabOrder.forEach((tab) => {
+          const pageEl = document.querySelector(`.page-${tab}`);
+          if (pageEl) {
+            pageEl.classList.remove(
+              "active",
+              "from-right",
+              "from-left",
+              "to-right",
+              "to-left",
+            );
+          }
+        });
+
+        // 显示发布页面
+        const publishPage = document.querySelector(".page-publish");
+        publishPage.classList.remove(
+          "from-right",
+          "from-left",
+          "to-right",
+          "to-left",
+        );
+        publishPage.classList.add("from-right");
+        publishPage.classList.add("active");
+
+        tabBar.style.display = "none";
+      }
+
+      // 关闭发布页面
+      function closePublishPage() {
+        const publishPage = document.querySelector(".page-publish");
+        publishPage.classList.remove(
+          "active",
+          "from-right",
+          "from-left",
+          "to-right",
+          "to-left",
+        );
+        publishPage.classList.add("to-right");
+
+        setTimeout(() => {
+          publishPage.classList.remove("to-right");
+          currentTab = previousMainTab;
+
+          const targetPage = document.querySelector(`.page-${currentTab}`);
+          targetPage.classList.add("active");
+
+          tabBar.style.display = "flex";
+        }, 300);
+      }
+
+      // 提交发布
+      function submitPublish() {
+        alert("发布成功！");
+        closePublishPage();
+      }
+
       // 切换tab页面 - 只处理五个主tab之间的切换
       function switchTab(targetTab) {
         if (currentTab === targetTab) return;
@@ -1089,6 +1397,19 @@
         item.addEventListener("click", () => {
           const targetTab = item.dataset.tab;
 
+          // 如果当前在发布页面，先关闭
+          if (currentTab === "publish") {
+            closePublishPage();
+            setTimeout(() => {
+              if (currentTab !== targetTab) {
+                tabItems.forEach((tab) => tab.classList.remove("active"));
+                item.classList.add("active");
+                switchTab(targetTab);
+              }
+            }, 300);
+            return;
+          }
+
           // 如果聊天详情页打开，先关闭
           if (chatDetailOpen) {
             closeChatDetail();
@@ -1120,6 +1441,7 @@
           image: "recommend/girl-skiing.jpg",
           desc: "还记得那个冬天的滑雪场吗？阳光洒在雪地上，闪闪发光，就像你那双爱笑的眼睛。你说你最喜欢冬天，因为可以在雪地里自由滑行，感受风从耳边呼啸而过的感觉。每次摔倒你都会笑着爬起来，拍拍身上的雪说：「这可是滑雪的必修课呀！」你的乐观感染了身边的每一个人，和你在一起的每一天都像是在过节。",
           isFavorited: false,
+          isLiked: false,
         },
         {
           index: 1,
@@ -1128,6 +1450,7 @@
           image: "recommend/girl-photoing.jpg",
           desc: "摄影是你记录生活的方式，也是你与世界对话的语言。你总说：「最好的照片不是拍出来的，而是等出来的。」于是你愿意在清晨的山顶等待日出，在黄昏的海边守候日落，在雨后的巷子里捕捉那道转瞬即逝的彩虹。你的相机里装满了故事，每一张照片背后都有一段温暖的回忆。",
           isFavorited: false,
+          isLiked: false,
         },
         {
           index: 2,
@@ -1136,6 +1459,7 @@
           image: "recommend/girl-shopping.jpg",
           desc: "逛街对你来说从来不是一项任务，而是一场发现美的冒险。你总能在琳琅满目的店铺里发现那些被别人忽略的小美好——也许是一条别致的项链，也许是一件设计独特的衣服，也许只是一杯好看的奶茶。你说：「生活中不缺少美，缺少的是发现美的眼睛和愿意停下来欣赏的心情。」",
           isFavorited: false,
+          isLiked: false,
         },
         {
           index: 3,
@@ -1144,6 +1468,7 @@
           image: "recommend/boy-badminton.jpg",
           desc: "羽毛球场上的你总是那么耀眼，每一次挥拍都充满了力量与美感。你说打球不仅是为了锻炼身体，更是为了释放压力，享受那种挥汗如雨的畅快。每周五的晚上是你固定的球友时间，不管工作多忙你都会准时出现。你常说：「生活就像打羽毛球，你永远不知道下一个球会从哪里来，但你只要准备好，就一定能接得住。」",
           isFavorited: false,
+          isLiked: false,
         },
       ];
 
@@ -1321,7 +1646,14 @@
               removeFrontCard("left");
               break;
             case "like":
-              // 喜欢，右滑出
+              // 喜欢，记录并右滑出
+              if (cardStack.length > 0) {
+                const currentPersonIndex = cardStack[0];
+                const person = personDetailData[currentPersonIndex];
+                if (person) {
+                  person.isLiked = true;
+                }
+              }
               removeFrontCard("right");
               break;
             case "favorite":
@@ -2505,7 +2837,65 @@
         }
       }
 
-      // 修改openProfileDetail函数，支持我的搭子页面
+      // 渲染我的pick页面
+      function renderMyPick() {
+        const detailContent = document.querySelector(".profile-detail-content");
+        const likedPersons = personDetailData.filter((p) => p.isLiked);
+
+        if (likedPersons.length === 0) {
+          detailContent.innerHTML = `
+                    <div style="text-align: center; padding: 60px 0;">
+                        <div style="font-size: 60px; margin-bottom: 20px;">💖</div>
+                        <div style="font-size: 16px; color: #a3a1bf;">还没有pick任何人哦～</div>
+                    </div>
+                `;
+        } else {
+          let html = "";
+          likedPersons.forEach((person) => {
+            html += `
+                        <div class="pick-item" data-index="${person.index}" style="display: flex; align-items: center; padding: 12px; background: #fff; border-radius: 12px; margin-bottom: 12px; cursor: pointer; transition: all 0.2s ease;">
+                            <img src="${person.image}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 12px;">
+                            <div style="flex: 1;">
+                                <div style="font-size: 16px; font-weight: 500; color: #333; margin-bottom: 4px;">${person.name}</div>
+                                <div style="font-size: 13px; color: #666;">${person.basic}</div>
+                            </div>
+                            <button class="pick-remove-btn" data-index="${person.index}" style="background: none; border: none; cursor: pointer; padding: 8px; border-radius: 50%; transition: all 0.2s;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    `;
+          });
+          detailContent.innerHTML = html;
+
+          // 绑定卡片点击事件，打开详情
+          document.querySelectorAll(".pick-item").forEach((item) => {
+            item.addEventListener("click", (e) => {
+              if (e.target.closest(".pick-remove-btn")) return;
+              const index = parseInt(item.dataset.index);
+              closeProfileDetail();
+              openCardDetail(index);
+            });
+          });
+
+          // 绑定移除按钮事件
+          document.querySelectorAll(".pick-remove-btn").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.stopPropagation();
+              const index = parseInt(btn.dataset.index);
+              const person = personDetailData.find((p) => p.index === index);
+              if (person) {
+                person.isLiked = false;
+              }
+              renderMyPick();
+            });
+          });
+        }
+      }
+
+      // 修改openProfileDetail函数，支持我的搭子和我的pick页面
       const originalOpenProfileDetail = openProfileDetail;
       openProfileDetail = function (menuId) {
         const title = menuNames[menuId] || "详情";
@@ -2517,6 +2907,8 @@
           renderFavorites();
         } else if (menuId === "partners") {
           renderMyPartners();
+        } else if (menuId === "mypick") {
+          renderMyPick();
         } else {
           detailContent.innerHTML = `
                     <div style="text-align: center; padding: 40px 0;">
@@ -2558,6 +2950,11 @@
           .querySelector(".find-search-button")
           .addEventListener("click", openFindSearch);
 
+        // 绑定发布按钮点击事件
+        document
+          .querySelector(".find-publish-button")
+          .addEventListener("click", openPublishPage);
+
         // 绑定搜索框关闭按钮事件
         document
           .querySelector(".find-search-close")
@@ -2577,6 +2974,16 @@
             quickSearchByType(type);
           });
         });
+
+        // 绑定发布页面返回按钮点击事件
+        document
+          .querySelector(".publish-back-button")
+          .addEventListener("click", closePublishPage);
+
+        // 绑定发布按钮点击事件
+        document
+          .querySelector(".publish-submit-button")
+          .addEventListener("click", submitPublish);
 
         findEventsBound = true;
       }

@@ -31,21 +31,6 @@
             <div class="recommend-card recommend-card-back-3" data-index="3">
               <img
                 class="recommend-card-img"
-                src="recommend/boy-badminton.jpg"
-                alt=""
-              />
-              <div class="recommend-card-info">
-                <div class="recommend-card-name">小宇</div>
-                <div class="recommend-card-basic">男 · 24岁</div>
-                <div class="recommend-card-desc">
-                  羽毛球爱好者，每周都要去打球
-                </div>
-              </div>
-            </div>
-            <!-- 卡片3（最后面，最模糊） -->
-            <div class="recommend-card recommend-card-back-2" data-index="2">
-              <img
-                class="recommend-card-img"
                 src="recommend/girl-shopping.jpg"
                 alt=""
               />
@@ -57,8 +42,8 @@
                 </div>
               </div>
             </div>
-            <!-- 卡片2（中间，中等模糊） -->
-            <div class="recommend-card recommend-card-back-1" data-index="1">
+            <!-- 卡片3（最后面，最模糊） -->
+            <div class="recommend-card recommend-card-back-2" data-index="2">
               <img
                 class="recommend-card-img"
                 src="recommend/girl-photoing.jpg"
@@ -69,6 +54,21 @@
                 <div class="recommend-card-basic">女 · 23岁</div>
                 <div class="recommend-card-desc">
                   摄影爱好者，喜欢用镜头记录生活的美好
+                </div>
+              </div>
+            </div>
+            <!-- 卡片2（中间，中等模糊） -->
+            <div class="recommend-card recommend-card-back-1" data-index="1">
+              <img
+                class="recommend-card-img"
+                src="recommend/boy-badminton.jpg"
+                alt=""
+              />
+              <div class="recommend-card-info">
+                <div class="recommend-card-name">小宇</div>
+                <div class="recommend-card-basic">男 · 24岁</div>
+                <div class="recommend-card-desc">
+                  羽毛球爱好者，每周都要去打球
                 </div>
               </div>
             </div>
@@ -164,6 +164,15 @@
             <div class="card-detail-info">
               <div class="card-detail-name"></div>
               <div class="card-detail-basic"></div>
+              <div class="card-detail-signature"></div>
+              <div class="card-detail-tags-section">
+                <div class="card-detail-tags-title">基础标签</div>
+                <div class="card-detail-tags basic-tags"></div>
+              </div>
+              <div class="card-detail-tags-section">
+                <div class="card-detail-tags-title">兴趣标签</div>
+                <div class="card-detail-tags interest-tags"></div>
+              </div>
               <div class="card-detail-desc"></div>
             </div>
           </div>
@@ -1442,33 +1451,45 @@
           desc: "还记得那个冬天的滑雪场吗？阳光洒在雪地上，闪闪发光，就像你那双爱笑的眼睛。你说你最喜欢冬天，因为可以在雪地里自由滑行，感受风从耳边呼啸而过的感觉。每次摔倒你都会笑着爬起来，拍拍身上的雪说：「这可是滑雪的必修课呀！」你的乐观感染了身边的每一个人，和你在一起的每一天都像是在过节。",
           isFavorited: false,
           isLiked: false,
+          basicTags: ["滑雪爱好者", "乐观开朗"],
+          interestTags: ["滑雪", "旅行", "美食", "电影"],
+          signature: "生活就像滑雪，摔倒了就爬起来继续滑！",
         },
         {
           index: 1,
-          name: "小琳",
-          basic: "女 · 23岁",
-          image: "recommend/girl-photoing.jpg",
-          desc: "摄影是你记录生活的方式，也是你与世界对话的语言。你总说：「最好的照片不是拍出来的，而是等出来的。」于是你愿意在清晨的山顶等待日出，在黄昏的海边守候日落，在雨后的巷子里捕捉那道转瞬即逝的彩虹。你的相机里装满了故事，每一张照片背后都有一段温暖的回忆。",
-          isFavorited: false,
-          isLiked: false,
-        },
-        {
-          index: 2,
-          name: "小美",
-          basic: "女 · 23岁",
-          image: "recommend/girl-shopping.jpg",
-          desc: "逛街对你来说从来不是一项任务，而是一场发现美的冒险。你总能在琳琅满目的店铺里发现那些被别人忽略的小美好——也许是一条别致的项链，也许是一件设计独特的衣服，也许只是一杯好看的奶茶。你说：「生活中不缺少美，缺少的是发现美的眼睛和愿意停下来欣赏的心情。」",
-          isFavorited: false,
-          isLiked: false,
-        },
-        {
-          index: 3,
           name: "小宇",
           basic: "男 · 24岁",
           image: "recommend/boy-badminton.jpg",
           desc: "羽毛球场上的你总是那么耀眼，每一次挥拍都充满了力量与美感。你说打球不仅是为了锻炼身体，更是为了释放压力，享受那种挥汗如雨的畅快。每周五的晚上是你固定的球友时间，不管工作多忙你都会准时出现。你常说：「生活就像打羽毛球，你永远不知道下一个球会从哪里来，但你只要准备好，就一定能接得住。」",
           isFavorited: false,
           isLiked: false,
+          basicTags: ["羽毛球达人", "运动健将"],
+          interestTags: ["羽毛球", "健身", "音乐", "旅行"],
+          signature: "生活就像打羽毛球，准备好就能接住每一个球！",
+        },
+        {
+          index: 2,
+          name: "小琳",
+          basic: "女 · 23岁",
+          image: "recommend/girl-photoing.jpg",
+          desc: "摄影是你记录生活的方式，也是你与世界对话的语言。你总说：「最好的照片不是拍出来的，而是等出来的。」于是你愿意在清晨的山顶等待日出，在黄昏的海边守候日落，在雨后的巷子里捕捉那道转瞬即逝的彩虹。你的相机里装满了故事，每一张照片背后都有一段温暖的回忆。",
+          isFavorited: false,
+          isLiked: false,
+          basicTags: ["摄影爱好者", "文艺青年"],
+          interestTags: ["摄影", "旅行", "阅读", "咖啡"],
+          signature: "最好的照片不是拍出来的，而是等出来的。",
+        },
+        {
+          index: 3,
+          name: "小美",
+          basic: "女 · 23岁",
+          image: "recommend/girl-shopping.jpg",
+          desc: "逛街对你来说从来不是一项任务，而是一场发现美的冒险。你总能在琳琅满目的店铺里发现那些被别人忽略的小美好——也许是一条别致的项链，也许是一件设计独特的衣服，也许只是一杯好看的奶茶。你说：「生活中不缺少美，缺少的是发现美的眼睛和愿意停下来欣赏的心情。」",
+          isFavorited: false,
+          isLiked: false,
+          basicTags: ["时尚达人", "购物爱好者"],
+          interestTags: ["购物", "时尚", "美食", "电影"],
+          signature: "生活中不缺少美，缺少的是发现美的眼睛。",
         },
       ];
 
@@ -1493,7 +1514,21 @@
         document.querySelector(".card-detail-image").alt = person.name;
         document.querySelector(".card-detail-name").textContent = person.name;
         document.querySelector(".card-detail-basic").textContent = person.basic;
+        document.querySelector(".card-detail-signature").textContent =
+          person.signature;
         document.querySelector(".card-detail-desc").textContent = person.desc;
+
+        // 渲染基础标签
+        const basicTagsEl = document.querySelector(".basic-tags");
+        basicTagsEl.innerHTML = person.basicTags
+          .map((tag) => `<span class="card-tag">${tag}</span>`)
+          .join("");
+
+        // 渲染兴趣标签
+        const interestTagsEl = document.querySelector(".interest-tags");
+        interestTagsEl.innerHTML = person.interestTags
+          .map((tag) => `<span class="card-tag">${tag}</span>`)
+          .join("");
 
         // 显示详情页
         document.querySelector(".card-detail-overlay").classList.add("active");

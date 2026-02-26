@@ -965,6 +965,43 @@ body {
   line-height: 1.8;
 }
 
+/* 签名 */
+.card-detail-signature {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* 标签区域 */
+.card-detail-tags-section {
+  margin-bottom: 16px;
+}
+
+.card-detail-tags-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.card-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 16px;
+  background-color: rgba(57, 153, 237, 0.1);
+  font-size: 12px;
+  font-weight: 500;
+  color: #3999ed;
+  white-space: nowrap;
+}
+
 /* 社区页面标题 */
 .community-title {
   position: absolute;

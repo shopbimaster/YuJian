@@ -662,8 +662,8 @@
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </div>
-            <div class="profile-menu-item" data-menu="certification">
-              <span>我的认证</span>
+            <div class="profile-menu-item" data-menu="vip">
+              <span>VIP专区</span>
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -1779,8 +1779,30 @@
           time: "2小时前",
           likes: 32,
           favorites: 8,
+          comments: 3,
           isLiked: false,
           isFavorited: false,
+          commentsList: [
+            {
+              author: "小红",
+              avatar: "person/girl1.jpg",
+              content: "下次带我一起！",
+              time: "1小时前",
+            },
+            {
+              author: "小李",
+              avatar: "person/boy2.jpg",
+              content: "风景真的很美！",
+              time: "30分钟前",
+            },
+            {
+              author: "小王",
+              avatar: "person/boy3.jpg",
+              content: "羡慕羡慕！",
+              time: "10分钟前",
+            },
+          ],
+          showComments: false,
         },
         {
           id: 2,
@@ -1800,8 +1822,18 @@
           time: "5小时前",
           likes: 45,
           favorites: 12,
+          comments: 1,
           isLiked: false,
           isFavorited: false,
+          commentsList: [
+            {
+              author: "小明",
+              avatar: "person/boy1.jpg",
+              content: "看起来好好吃！",
+              time: "4小时前",
+            },
+          ],
+          showComments: false,
         },
         {
           id: 3,
@@ -1821,8 +1853,11 @@
           time: "昨天",
           likes: 68,
           favorites: 21,
+          comments: 0,
           isLiked: false,
           isFavorited: false,
+          commentsList: [],
+          showComments: false,
         },
         {
           id: 4,
@@ -1842,8 +1877,24 @@
           time: "2天前",
           likes: 25,
           favorites: 6,
+          comments: 2,
           isLiked: false,
           isFavorited: false,
+          commentsList: [
+            {
+              author: "小雪",
+              avatar: "person/girl4.jpg",
+              content: "晚上骑车注意安全哦！",
+              time: "1天前",
+            },
+            {
+              author: "小琳",
+              avatar: "person/girl2.jpg",
+              content: "夜景好美！",
+              time: "18小时前",
+            },
+          ],
+          showComments: false,
         },
       ];
 
@@ -1875,6 +1926,12 @@
                     <div class="community-post-footer">
                         <div class="community-post-time">${post.time}</div>
                         <div class="community-post-stats">
+                            <div class="community-stat-item community-comment-button" data-post-id="${post.id}" data-action="comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                                <span>${post.comments}</span>
+                            </div>
                             <div class="community-stat-item community-like-button ${post.isLiked ? "active" : ""}" data-post-id="${post.id}" data-action="like">
                                 <svg viewBox="0 0 24 24" fill="${post.isLiked ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
@@ -1887,6 +1944,24 @@
                                 </svg>
                                 <span>${post.favorites}</span>
                             </div>
+                        </div>
+                    </div>
+                    <div class="community-post-comments ${post.showComments ? "active" : ""}" data-post-id="${post.id}">
+                        <div class="comments-list">
+                            ${post.commentsList
+                              .map(
+                                (comment) => `
+                                <div class="comment-item">
+                                    <img class="comment-avatar" src="${comment.avatar}" alt="${comment.author}">
+                                    <div class="comment-content">
+                                        <div class="comment-author">${comment.author}</div>
+                                        <div class="comment-text">${comment.content}</div>
+                                        <div class="comment-time">${comment.time}</div>
+                                    </div>
+                                </div>
+                            `,
+                              )
+                              .join("")}
                         </div>
                     </div>
                 `;
@@ -1929,6 +2004,17 @@
               e.stopPropagation();
               const postId = parseInt(btn.dataset.postId);
               toggleFavorite(postId);
+            });
+          });
+
+        // 绑定评论按钮点击事件
+        document
+          .querySelectorAll(".community-comment-button")
+          .forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.stopPropagation();
+              const postId = parseInt(btn.dataset.postId);
+              toggleComments(postId);
             });
           });
       }
@@ -1980,6 +2066,22 @@
 
         // 更新列表中的显示
         updatePostStats(postId);
+      }
+
+      // 切换评论显示状态
+      function toggleComments(postId) {
+        const post = communityPosts.find((p) => p.id === postId);
+        if (!post) return;
+
+        post.showComments = !post.showComments;
+
+        // 更新评论区显示
+        const commentsSection = document.querySelector(
+          `.community-post-comments[data-post-id="${postId}"]`,
+        );
+        if (commentsSection) {
+          commentsSection.classList.toggle("active", post.showComments);
+        }
       }
 
       // 更新发布卡片的统计显示
@@ -2038,6 +2140,12 @@
                     <div class="community-post-footer">
                         <div class="community-post-time">${post.time}</div>
                         <div class="community-post-stats">
+                            <div class="community-stat-item community-comment-button" data-post-id="${post.id}" data-action="comment">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                                <span>${post.comments}</span>
+                            </div>
                             <div class="community-stat-item community-like-button ${post.isLiked ? "active" : ""}" data-post-id="${post.id}" data-action="like">
                                 <svg viewBox="0 0 24 24" fill="${post.isLiked ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
@@ -2050,6 +2158,26 @@
                                 </svg>
                                 <span>${post.favorites}</span>
                             </div>
+                        </div>
+                    </div>
+                    <div class="community-post-comments active" data-post-id="${post.id}">
+                        <div class="comments-title">评论</div>
+                        <div class="comments-list">
+                            ${post.commentsList
+                              .map(
+                                (comment) => `
+                                <div class="comment-item">
+                                    <img class="comment-avatar" src="${comment.avatar}" alt="${comment.author}">
+                                    <div class="comment-content">
+                                        <div class="comment-author">${comment.author}</div>
+                                        <div class="comment-text">${comment.content}</div>
+                                        <div class="comment-time">${comment.time}</div>
+                                    </div>
+                                </div>
+                            `,
+                              )
+                              .join("")}
+                            ${post.commentsList.length === 0 ? '<div class="no-comments">暂无评论</div>' : ""}
                         </div>
                     </div>
                 `;
@@ -2136,10 +2264,21 @@
         }
       }
 
+      // 个人资料数据
+      const userProfile = {
+        nickname: "小玉",
+        gender: "女",
+        age: 22,
+        avatar: "person/girl4.jpg",
+        signature: "生活就像滑雪，摔倒了就爬起来继续滑！",
+        interestTags: ["滑雪", "旅行", "美食", "电影"],
+        isCertified: true,
+      };
+
       // 菜单名称映射
       const menuNames = {
         profile: "个人资料",
-        certification: "我的认证",
+        vip: "VIP专区",
         mypick: "我的pick",
         pickedme: "谁pick了我",
         favorites: "收藏夹",
@@ -2258,28 +2397,143 @@
 
       // 打开我的页面详情
       function openProfileDetail(menuId) {
-        const title = menuNames[menuId] || "详情";
+        console.log("openProfileDetail 被调用");
+
+        const title = "个人资料";
         document.querySelector(".profile-detail-title").textContent = title;
 
         const detailContent = document.querySelector(".profile-detail-content");
 
-        if (menuId === "favorites") {
-          renderFavorites();
-        } else {
-          detailContent.innerHTML = `
-            <div style="text-align: center; padding: 40px 0;">
-              <div style="font-size: 18px; color: #333; margin-bottom: 10px;">${title}</div>
-              <div style="font-size: 14px; color: #a3a1bf;">功能开发中...</div>
-            </div>
-          `;
-        }
+        // 直接渲染个人资料页面
+        var html = "";
+        html += '<div class="profile-detail-page-content">';
 
+        // 头像区域
+        html += '<div class="profile-avatar-section">';
+        html += '<div class="profile-detail-avatar-container">';
+        html +=
+          '<img class="profile-detail-avatar" src="' +
+          userProfile.avatar +
+          '" alt="头像">';
+        html += "</div>";
+
+        // 认证徽章
+        if (userProfile.isCertified) {
+          html += '<div class="certification-badge">';
+          html +=
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
+          html += '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>';
+          html += '<polyline points="22 4 12 14.01 9 11.01"></polyline>';
+          html += "</svg>";
+          html += "<span>已认证</span>";
+          html += "</div>";
+        } else {
+          html += '<div class="certification-badge not-certified">';
+          html += "<span>未认证</span>";
+          html += "</div>";
+        }
+        html += "</div>";
+
+        // 表单区域
+        html += '<div class="profile-form-section">';
+
+        // 昵称
+        html += '<div class="profile-form-item">';
+        html += '<div class="profile-form-label">昵称</div>';
+        html += '<div class="profile-form-value editable">';
+        html +=
+          '<input type="text" class="profile-input" value="' +
+          userProfile.nickname +
+          '" id="nickname-input">';
+        html += "</div>";
+        html += "</div>";
+
+        // 性别
+        html += '<div class="profile-form-item">';
+        html += '<div class="profile-form-label">性别</div>';
+        html += '<div class="profile-form-value readonly">';
+        html += '<span class="readonly-text">' + userProfile.gender + "</span>";
+        html += '<span class="readonly-hint">不可修改</span>';
+        html += "</div>";
+        html += "</div>";
+
+        // 年龄
+        html += '<div class="profile-form-item">';
+        html += '<div class="profile-form-label">年龄</div>';
+        html += '<div class="profile-form-value readonly">';
+        html += '<span class="readonly-text">' + userProfile.age + "岁</span>";
+        html += '<span class="readonly-hint">不可修改</span>';
+        html += "</div>";
+        html += "</div>";
+
+        // 个性签名
+        html += '<div class="profile-form-item">';
+        html += '<div class="profile-form-label">个性签名</div>';
+        html += '<div class="profile-form-value editable">';
+        html +=
+          '<textarea class="profile-textarea" id="signature-input">' +
+          userProfile.signature +
+          "</textarea>";
+        html += "</div>";
+        html += "</div>";
+
+        // 兴趣标签
+        html += '<div class="profile-form-item">';
+        html += '<div class="profile-form-label">兴趣标签</div>';
+        html += '<div class="profile-form-value">';
+        html += '<div class="profile-interest-tags" id="interest-tags">';
+        for (var i = 0; i < userProfile.interestTags.length; i++) {
+          html +=
+            '<span class="profile-interest-tag">' +
+            userProfile.interestTags[i] +
+            "</span>";
+        }
+        html += "</div>";
+        html += "</div>";
+        html += "</div>";
+
+        html += "</div>";
+
+        // 保存按钮
+        html += '<div class="profile-save-section">';
+        html +=
+          '<button class="profile-save-button" id="save-profile-btn">保存修改</button>';
+        html += "</div>";
+
+        html += "</div>";
+
+        detailContent.innerHTML = html;
+
+        // 绑定保存按钮事件
+        setTimeout(function () {
+          var saveBtn = document.getElementById("save-profile-btn");
+          if (saveBtn) {
+            saveBtn.addEventListener("click", saveProfile);
+          }
+        }, 50);
+
+        // 显示详情页
         document
           .querySelector(".page-profile-detail-overlay")
           .classList.add("active");
         document
           .querySelector(".page-profile-detail-page")
           .classList.add("active");
+      }
+
+      // 保存个人资料
+      function saveProfile() {
+        const nicknameInput = document.getElementById("nickname-input");
+        const signatureInput = document.getElementById("signature-input");
+
+        if (nicknameInput) {
+          userProfile.nickname = nicknameInput.value;
+        }
+        if (signatureInput) {
+          userProfile.signature = signatureInput.value;
+        }
+
+        alert("保存成功！");
       }
 
       // 关闭我的页面详情
@@ -2297,8 +2551,114 @@
         // 绑定菜单项点击事件
         document.querySelectorAll(".profile-menu-item").forEach((item) => {
           item.addEventListener("click", () => {
-            const menuId = item.dataset.menu;
-            openProfileDetail(menuId);
+            // 直接设置个人资料页面内容
+            document.querySelector(".profile-detail-title").textContent =
+              "个人资料";
+            var detailContent = document.querySelector(
+              ".profile-detail-content",
+            );
+
+            var html = "";
+            html += '<div class="profile-detail-page-content">';
+
+            // 头像和认证
+            html += '<div class="profile-avatar-section">';
+            html += '<div class="profile-detail-avatar-container">';
+            html +=
+              '<img class="profile-detail-avatar" src="' +
+              userProfile.avatar +
+              '" alt="头像">';
+            html += "</div>";
+            if (userProfile.isCertified) {
+              html += '<div class="certification-badge">';
+              html +=
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
+              html += "<span>已认证</span>";
+              html += "</div>";
+            } else {
+              html +=
+                '<div class="certification-badge not-certified"><span>未认证</span></div>';
+            }
+            html += "</div>";
+
+            // 表单区域
+            html += '<div class="profile-form-section">';
+
+            // 昵称
+            html += '<div class="profile-form-item">';
+            html += '<div class="profile-form-label">昵称</div>';
+            html +=
+              '<div class="profile-form-value editable"><input type="text" class="profile-input" value="' +
+              userProfile.nickname +
+              '" id="nickname-input"></div>';
+            html += "</div>";
+
+            // 性别
+            html += '<div class="profile-form-item">';
+            html += '<div class="profile-form-label">性别</div>';
+            html +=
+              '<div class="profile-form-value readonly"><span class="readonly-text">' +
+              userProfile.gender +
+              '</span><span class="readonly-hint">不可修改</span></div>';
+            html += "</div>";
+
+            // 年龄
+            html += '<div class="profile-form-item">';
+            html += '<div class="profile-form-label">年龄</div>';
+            html +=
+              '<div class="profile-form-value readonly"><span class="readonly-text">' +
+              userProfile.age +
+              '岁</span><span class="readonly-hint">不可修改</span></div>';
+            html += "</div>";
+
+            // 个性签名
+            html += '<div class="profile-form-item">';
+            html += '<div class="profile-form-label">个性签名</div>';
+            html +=
+              '<div class="profile-form-value editable"><textarea class="profile-textarea" id="signature-input">' +
+              userProfile.signature +
+              "</textarea></div>";
+            html += "</div>";
+
+            // 兴趣标签
+            html += '<div class="profile-form-item">';
+            html += '<div class="profile-form-label">兴趣标签</div>';
+            html +=
+              '<div class="profile-form-value"><div class="profile-interest-tags" id="interest-tags">';
+            for (var i = 0; i < userProfile.interestTags.length; i++) {
+              html +=
+                '<span class="profile-interest-tag">' +
+                userProfile.interestTags[i] +
+                "</span>";
+            }
+            html += "</div></div>";
+            html += "</div>";
+
+            html += "</div>";
+
+            // 保存按钮
+            html += '<div class="profile-save-section">';
+            html +=
+              '<button class="profile-save-button" id="save-profile-btn">保存修改</button>';
+            html += "</div>";
+
+            html += "</div>";
+
+            detailContent.innerHTML = html;
+
+            // 绑定保存按钮
+            setTimeout(function () {
+              var btn = document.getElementById("save-profile-btn");
+              if (btn) btn.addEventListener("click", saveProfile);
+            }, 50);
+
+            // 显示页面
+            document
+              .querySelector(".page-profile-detail-overlay")
+              .classList.add("active");
+            document
+              .querySelector(".page-profile-detail-page")
+              .classList.add("active");
           });
         });
 

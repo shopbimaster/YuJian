@@ -2395,132 +2395,6 @@
         });
       }
 
-      // 打开我的页面详情
-      function openProfileDetail(menuId) {
-        console.log("openProfileDetail 被调用");
-
-        const title = "个人资料";
-        document.querySelector(".profile-detail-title").textContent = title;
-
-        const detailContent = document.querySelector(".profile-detail-content");
-
-        // 直接渲染个人资料页面
-        var html = "";
-        html += '<div class="profile-detail-page-content">';
-
-        // 头像区域
-        html += '<div class="profile-avatar-section">';
-        html += '<div class="profile-detail-avatar-container">';
-        html +=
-          '<img class="profile-detail-avatar" src="' +
-          userProfile.avatar +
-          '" alt="头像">';
-        html += "</div>";
-
-        // 认证徽章
-        if (userProfile.isCertified) {
-          html += '<div class="certification-badge">';
-          html +=
-            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
-          html += '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>';
-          html += '<polyline points="22 4 12 14.01 9 11.01"></polyline>';
-          html += "</svg>";
-          html += "<span>已认证</span>";
-          html += "</div>";
-        } else {
-          html += '<div class="certification-badge not-certified">';
-          html += "<span>未认证</span>";
-          html += "</div>";
-        }
-        html += "</div>";
-
-        // 表单区域
-        html += '<div class="profile-form-section">';
-
-        // 昵称
-        html += '<div class="profile-form-item">';
-        html += '<div class="profile-form-label">昵称</div>';
-        html += '<div class="profile-form-value editable">';
-        html +=
-          '<input type="text" class="profile-input" value="' +
-          userProfile.nickname +
-          '" id="nickname-input">';
-        html += "</div>";
-        html += "</div>";
-
-        // 性别
-        html += '<div class="profile-form-item">';
-        html += '<div class="profile-form-label">性别</div>';
-        html += '<div class="profile-form-value readonly">';
-        html += '<span class="readonly-text">' + userProfile.gender + "</span>";
-        html += '<span class="readonly-hint">不可修改</span>';
-        html += "</div>";
-        html += "</div>";
-
-        // 年龄
-        html += '<div class="profile-form-item">';
-        html += '<div class="profile-form-label">年龄</div>';
-        html += '<div class="profile-form-value readonly">';
-        html += '<span class="readonly-text">' + userProfile.age + "岁</span>";
-        html += '<span class="readonly-hint">不可修改</span>';
-        html += "</div>";
-        html += "</div>";
-
-        // 个性签名
-        html += '<div class="profile-form-item">';
-        html += '<div class="profile-form-label">个性签名</div>';
-        html += '<div class="profile-form-value editable">';
-        html +=
-          '<textarea class="profile-textarea" id="signature-input">' +
-          userProfile.signature +
-          "</textarea>";
-        html += "</div>";
-        html += "</div>";
-
-        // 兴趣标签
-        html += '<div class="profile-form-item">';
-        html += '<div class="profile-form-label">兴趣标签</div>';
-        html += '<div class="profile-form-value">';
-        html += '<div class="profile-interest-tags" id="interest-tags">';
-        for (var i = 0; i < userProfile.interestTags.length; i++) {
-          html +=
-            '<span class="profile-interest-tag">' +
-            userProfile.interestTags[i] +
-            "</span>";
-        }
-        html += "</div>";
-        html += "</div>";
-        html += "</div>";
-
-        html += "</div>";
-
-        // 保存按钮
-        html += '<div class="profile-save-section">';
-        html +=
-          '<button class="profile-save-button" id="save-profile-btn">保存修改</button>';
-        html += "</div>";
-
-        html += "</div>";
-
-        detailContent.innerHTML = html;
-
-        // 绑定保存按钮事件
-        setTimeout(function () {
-          var saveBtn = document.getElementById("save-profile-btn");
-          if (saveBtn) {
-            saveBtn.addEventListener("click", saveProfile);
-          }
-        }, 50);
-
-        // 显示详情页
-        document
-          .querySelector(".page-profile-detail-overlay")
-          .classList.add("active");
-        document
-          .querySelector(".page-profile-detail-page")
-          .classList.add("active");
-      }
-
       // 保存个人资料
       function saveProfile() {
         const nicknameInput = document.getElementById("nickname-input");
@@ -2546,119 +2420,21 @@
           .classList.remove("active");
       }
 
+      // 标记是否已经绑定过事件
+      let profileEventsBound = false;
+
       // 初始化我的页面
       function initProfilePage() {
+        if (profileEventsBound) return;
+
+        console.log("初始化个人资料页面事件绑定");
+
         // 绑定菜单项点击事件
         document.querySelectorAll(".profile-menu-item").forEach((item) => {
           item.addEventListener("click", () => {
-            // 直接设置个人资料页面内容
-            document.querySelector(".profile-detail-title").textContent =
-              "个人资料";
-            var detailContent = document.querySelector(
-              ".profile-detail-content",
-            );
-
-            var html = "";
-            html += '<div class="profile-detail-page-content">';
-
-            // 头像和认证
-            html += '<div class="profile-avatar-section">';
-            html += '<div class="profile-detail-avatar-container">';
-            html +=
-              '<img class="profile-detail-avatar" src="' +
-              userProfile.avatar +
-              '" alt="头像">';
-            html += "</div>";
-            if (userProfile.isCertified) {
-              html += '<div class="certification-badge">';
-              html +=
-                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
-              html += "<span>已认证</span>";
-              html += "</div>";
-            } else {
-              html +=
-                '<div class="certification-badge not-certified"><span>未认证</span></div>';
-            }
-            html += "</div>";
-
-            // 表单区域
-            html += '<div class="profile-form-section">';
-
-            // 昵称
-            html += '<div class="profile-form-item">';
-            html += '<div class="profile-form-label">昵称</div>';
-            html +=
-              '<div class="profile-form-value editable"><input type="text" class="profile-input" value="' +
-              userProfile.nickname +
-              '" id="nickname-input"></div>';
-            html += "</div>";
-
-            // 性别
-            html += '<div class="profile-form-item">';
-            html += '<div class="profile-form-label">性别</div>';
-            html +=
-              '<div class="profile-form-value readonly"><span class="readonly-text">' +
-              userProfile.gender +
-              '</span><span class="readonly-hint">不可修改</span></div>';
-            html += "</div>";
-
-            // 年龄
-            html += '<div class="profile-form-item">';
-            html += '<div class="profile-form-label">年龄</div>';
-            html +=
-              '<div class="profile-form-value readonly"><span class="readonly-text">' +
-              userProfile.age +
-              '岁</span><span class="readonly-hint">不可修改</span></div>';
-            html += "</div>";
-
-            // 个性签名
-            html += '<div class="profile-form-item">';
-            html += '<div class="profile-form-label">个性签名</div>';
-            html +=
-              '<div class="profile-form-value editable"><textarea class="profile-textarea" id="signature-input">' +
-              userProfile.signature +
-              "</textarea></div>";
-            html += "</div>";
-
-            // 兴趣标签
-            html += '<div class="profile-form-item">';
-            html += '<div class="profile-form-label">兴趣标签</div>';
-            html +=
-              '<div class="profile-form-value"><div class="profile-interest-tags" id="interest-tags">';
-            for (var i = 0; i < userProfile.interestTags.length; i++) {
-              html +=
-                '<span class="profile-interest-tag">' +
-                userProfile.interestTags[i] +
-                "</span>";
-            }
-            html += "</div></div>";
-            html += "</div>";
-
-            html += "</div>";
-
-            // 保存按钮
-            html += '<div class="profile-save-section">';
-            html +=
-              '<button class="profile-save-button" id="save-profile-btn">保存修改</button>';
-            html += "</div>";
-
-            html += "</div>";
-
-            detailContent.innerHTML = html;
-
-            // 绑定保存按钮
-            setTimeout(function () {
-              var btn = document.getElementById("save-profile-btn");
-              if (btn) btn.addEventListener("click", saveProfile);
-            }, 50);
-
-            // 显示页面
-            document
-              .querySelector(".page-profile-detail-overlay")
-              .classList.add("active");
-            document
-              .querySelector(".page-profile-detail-page")
-              .classList.add("active");
+            const menuId = item.dataset.menu;
+            console.log("点击菜单项:", menuId);
+            openProfileDetail(menuId);
           });
         });
 
@@ -2671,6 +2447,8 @@
         document
           .querySelector(".page-profile-detail-overlay")
           .addEventListener("click", closeProfileDetail);
+
+        profileEventsBound = true;
       }
 
       // 觅伴活动数据
@@ -3290,15 +3068,111 @@
         }
       }
 
-      // 修改openProfileDetail函数，支持我的搭子和我的pick页面
-      const originalOpenProfileDetail = openProfileDetail;
-      openProfileDetail = function (menuId) {
+      // 打开我的页面详情
+      function openProfileDetail(menuId) {
+        console.log("openProfileDetail 被调用, menuId=", menuId);
         const title = menuNames[menuId] || "详情";
         document.querySelector(".profile-detail-title").textContent = title;
 
         const detailContent = document.querySelector(".profile-detail-content");
+        console.log("detailContent=", detailContent);
 
-        if (menuId === "favorites") {
+        if (menuId === "profile") {
+          console.log("渲染个人资料页面");
+
+          var html = '<div class="profile-detail-page-content">';
+
+          // 头像和认证
+          html += '<div class="profile-avatar-section">';
+          html += '<div class="profile-detail-avatar-container">';
+          html +=
+            '<img class="profile-detail-avatar" src="' +
+            userProfile.avatar +
+            '" alt="头像">';
+          html += "</div>";
+          if (userProfile.isCertified) {
+            html += '<div class="certification-badge">';
+            html +=
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
+            html += "<span>已认证</span>";
+            html += "</div>";
+          } else {
+            html +=
+              '<div class="certification-badge not-certified"><span>未认证</span></div>';
+          }
+          html += "</div>";
+
+          // 表单区域
+          html += '<div class="profile-form-section">';
+
+          // 昵称
+          html += '<div class="profile-form-item">';
+          html += '<div class="profile-form-label">昵称</div>';
+          html +=
+            '<div class="profile-form-value editable"><input type="text" class="profile-input" value="' +
+            userProfile.nickname +
+            '" id="nickname-input"></div>';
+          html += "</div>";
+
+          // 性别
+          html += '<div class="profile-form-item">';
+          html += '<div class="profile-form-label">性别</div>';
+          html +=
+            '<div class="profile-form-value readonly"><span class="readonly-text">' +
+            userProfile.gender +
+            '</span><span class="readonly-hint">不可修改</span></div>';
+          html += "</div>";
+
+          // 年龄
+          html += '<div class="profile-form-item">';
+          html += '<div class="profile-form-label">年龄</div>';
+          html +=
+            '<div class="profile-form-value readonly"><span class="readonly-text">' +
+            userProfile.age +
+            '岁</span><span class="readonly-hint">不可修改</span></div>';
+          html += "</div>";
+
+          // 个性签名
+          html += '<div class="profile-form-item">';
+          html += '<div class="profile-form-label">个性签名</div>';
+          html +=
+            '<div class="profile-form-value editable"><textarea class="profile-textarea" id="signature-input">' +
+            userProfile.signature +
+            "</textarea></div>";
+          html += "</div>";
+
+          // 兴趣标签
+          html += '<div class="profile-form-item">';
+          html += '<div class="profile-form-label">兴趣标签</div>';
+          html +=
+            '<div class="profile-form-value"><div class="profile-interest-tags" id="interest-tags">';
+          for (var i = 0; i < userProfile.interestTags.length; i++) {
+            html +=
+              '<span class="profile-interest-tag">' +
+              userProfile.interestTags[i] +
+              "</span>";
+          }
+          html += "</div></div>";
+          html += "</div>";
+
+          html += "</div>";
+
+          // 保存按钮
+          html += '<div class="profile-save-section">';
+          html +=
+            '<button class="profile-save-button" id="save-profile-btn">保存修改</button>';
+          html += "</div>";
+
+          html += "</div>";
+
+          detailContent.innerHTML = html;
+
+          // 绑定保存按钮
+          setTimeout(function () {
+            var btn = document.getElementById("save-profile-btn");
+            if (btn) btn.addEventListener("click", saveProfile);
+          }, 50);
+        } else if (menuId === "favorites") {
           renderFavorites();
         } else if (menuId === "partners") {
           renderMyPartners();
@@ -3319,7 +3193,7 @@
         document
           .querySelector(".page-profile-detail-page")
           .classList.add("active");
-      };
+      }
 
       // 觅伴页面事件是否已绑定
       let findEventsBound = false;
